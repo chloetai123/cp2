@@ -17,6 +17,7 @@ Project structure:
 
 2. Financial Advisory System
    - threshold.py - Generate threshold rules
+   - threshold.json - The threshold rules
    - advisory_core2.py - Advisory logic
 
 3. User Interface
