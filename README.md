@@ -1,4 +1,5 @@
 **Loan Approval Prediction and Financial Advising Using AI**
+
 This repository contains the source code for **Capstone Project 2**, which focuses on building an AI-based system for personal loan approval prediction and financial advisory system.
 
 Project structure: 
