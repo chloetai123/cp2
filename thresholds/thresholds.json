@@ -1,0 +1,34 @@
+{
+  "categorical": {
+    "Gender": "Male",
+    "Marital_Status": "Married",
+    "Education": "Graduate",
+    "Employment_Status": "Employed",
+    "City/Town": "Urban"
+  },
+  "discrete": {
+    "Dependents": {
+      "majority": 1
+    }
+  },
+  "binary": {
+    "Loan_History": {
+      "majority": 0
+    }
+  },
+  "numerical": {
+    "Annual_Income": {
+      "p25": 70018.5,
+      "p75": 122501.75
+    },
+    "Loan_Amount_Requested": {
+      "p25": 20196.25,
+      "p75": 27695.0
+    },
+    "Loan_Term": {
+      "p25": 68.0,
+      "p75": 183.0
+    }
+  }
+}
+
