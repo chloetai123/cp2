@@ -12,6 +12,8 @@ Project structure:
    - eval_my.py - Cross-domain testing
    - b1.py - Boundary testing
    - predict_raw1.py - End-to-end prediction pipeline
+   - ve1.py - Personal loan approval dataset
+   - loan_dataset_malaysia1.csv - Malaysia-based synthetic dataset
 
 2. Financial Advisory System
    - threshold.py - Generate threshold rules
