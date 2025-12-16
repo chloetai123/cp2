@@ -1,0 +1,23 @@
+# environments
+venv/
+__pycache__/
+
+# models & binaries
+*.pkl
+*.joblib
+models/
+models_my/
+
+# outputs
+eda_outputs/
+preprocess_outputs/
+preds.csv
+*_preds.csv
+boundary_cases.csv
+
+# data (optional – see note below)
+# *.csv
+
+# secrets & system
+.env
+.DS_Store
