@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
 # xgb_my.py — Malaysia synthetic model
 # Pipeline: no_outliers → SMOTE → scaled
-# Matched preprocessing logic with general pipeline, but NaN-handling removed.
 
 from pathlib import Path
 import json

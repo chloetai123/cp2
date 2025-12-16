@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
-# pp3.py — Preprocess into 4 variants in this order:
-#   1) Handle outliers (for no_outliers: remove on FULL dataset; for with_outliers: skip)
-#   2) Train/test split (stratified, random_state=42)
-#   3) Handle class imbalance (SMOTE on TRAIN only or not)
-# Outputs (scaled-only) + artifacts per variant for deployment inference.
+# pp3.py is the preprocessing pipeline for input data before feeding it into the prediction model
 
 from pathlib import Path
 import json, random, numpy as np, pandas as pd
@@ -12,8 +7,8 @@ from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 import joblib
 
-# ================== CONFIG (edit DATA_PATH to swap dataset) ==================
-DATA_PATH    = Path("ve1.csv")       # <— change to your CSV, then rerun this script
+# ================== CONFIGURATION ==================
+DATA_PATH    = Path("ve1.csv")   #Change dataset here
 OUT_ROOT     = Path("preprocess_outputs")
 TARGET       = "Loan_Approval_Status"
 RANDOM_STATE = 42
@@ -22,14 +17,16 @@ TEST_SIZE    = 0.20
 # Columns to use (Age intentionally excluded per your literature review)
 CAT_COLS = ["Marital_Status","Dependents","Education","Employment_Status","City/Town"]
 BIN_COLS = ["Gender","Loan_History"]
-NUM_BASE = ["Annual_Income","Loan_Amount_Requested","Loan_Term"]  # + computed LTI
-# ============================================================================
+NUM_BASE = ["Annual_Income","Loan_Amount_Requested","Loan_Term"]  
+# =====================================================
 
+#Text standardizing
 def std_text(s: pd.Series) -> pd.Series:
     return (s.astype(str).str.replace(r"[-_/]", " ", regex=True)
                     .str.replace(r"\s+", " ", regex=True)
                     .str.strip().str.lower())
 
+#Binary feature mapping
 def map_binary(series: pd.Series, kind: str) -> pd.Series:
     if kind == "Gender":
         g = std_text(series)
@@ -45,8 +42,8 @@ def map_binary(series: pd.Series, kind: str) -> pd.Series:
                          index=series.index, dtype="float64")
     return series
 
+#Removing outliers (before splitting)
 def remove_outliers_iqr_full(df: pd.DataFrame, cols):
-    """Remove outliers using IQR computed on the FULL dataset (pre-split)."""
     m = pd.Series(True, index=df.index)
     for c in cols:
         x = pd.to_numeric(df[c], errors="coerce")
@@ -56,6 +53,7 @@ def remove_outliers_iqr_full(df: pd.DataFrame, cols):
         m &= x.between(lo, hi) | x.isna()
     return df.loc[m].copy()
 
+#Build OHE design matrix
 def build_design(train_df: pd.DataFrame, df_any: pd.DataFrame, ohe_categories: dict) -> pd.DataFrame:
     # one-hot aligned to TRAIN categories
     parts = []
@@ -72,16 +70,17 @@ def build_design(train_df: pd.DataFrame, df_any: pd.DataFrame, ohe_categories: d
     X = pd.concat([base, Dcat], axis=1)
     return X
 
+#Full preprocessing pipeline
+## Split → OHE → median impute → scale → SMOTE/no_SMOTE → save CSVs + artifacts
 def process_branch(df_branch: pd.DataFrame, outlier_key: str, summary: dict):
-    """Split → OHE → median impute → scale → SMOTE/no_SMOTE → save CSVs + artifacts (incl. LTI clip)."""
-    # 2) train/test split
+    # train/test split
     X = df_branch.drop(columns=[TARGET])
     y = df_branch[TARGET].astype(int)
     Xtr_raw, Xte_raw, ytr, yte = train_test_split(
         X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE, stratify=y
     )
 
-    # text normalize (safety)
+    # text normalize 
     for c in CAT_COLS + BIN_COLS:
         if c in Xtr_raw: Xtr_raw[c] = std_text(Xtr_raw[c])
         if c in Xte_raw: Xte_raw[c] = std_text(Xte_raw[c])
@@ -110,7 +109,7 @@ def process_branch(df_branch: pd.DataFrame, outlier_key: str, summary: dict):
     Xte_s = scaler.transform(Xte)
     feats = list(Xtr.columns)
 
-    # 3) handle class imbalance: no_smote + smote
+    # handle class imbalance: no_smote + smote
     for sm_flag in ["no_smote", "smote"]:
         vdir = OUT_ROOT / outlier_key / sm_flag / "scaled"
         vdir.mkdir(parents=True, exist_ok=True)
@@ -150,6 +149,7 @@ def process_branch(df_branch: pd.DataFrame, outlier_key: str, summary: dict):
             "artifacts_dir": str(art_dir),
         }
 
+#Entire preprocessing workflow
 def main():
     random.seed(RANDOM_STATE); np.random.seed(RANDOM_STATE)
 
@@ -177,7 +177,7 @@ def main():
 
     summary = {"data_path": str(DATA_PATH), "random_state": RANDOM_STATE, "test_size": TEST_SIZE, "variants": {}}
 
-    # 1) outliers handled per branch
+    # outliers handled per branch
     df_with = df.copy()  # with_outliers: skip removal
     df_no   = remove_outliers_iqr_full(df.copy(), cols=NUM_BASE + ["LTI"])  # no_outliers: remove on FULL df
 

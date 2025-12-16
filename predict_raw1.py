@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# predict_raw.py — original pipeline, now includes LTI in outputs
+# predict_raw.py — prediction pipeline
 
 from pathlib import Path
 import json
@@ -12,7 +11,7 @@ try:
 except Exception:
     xgb = None
 
-# ---------------- CONFIG ----------------
+# ============ CONFIG ============
 MODELS_DIR = Path("models/xgb")
 BEST_META  = MODELS_DIR / "best_variant.json"
 
@@ -20,7 +19,7 @@ MODEL_JSON = MODELS_DIR / "xgb_model.json"
 MODEL_PKL  = MODELS_DIR / "xgb_model.pkl"
 
 THRESHOLD = 0.50
-INPUT_CSV  = Path("boundary_cases1.csv") #change this to boundary_cases.csv
+INPUT_CSV  = Path("boundary_cases1.csv") #change dataset name here for batch prediction
 OUTPUT_CSV = Path("preds.csv")
 
 DEFAULT_ONE_ROW = {
@@ -36,7 +35,7 @@ DEFAULT_ONE_ROW = {
     "Loan_Term":36
 }
 
-# ---------------- HELPERS ----------------
+# ============ HELPERS ============
 def load_best_variant():
     if not BEST_META.exists():
         raise SystemExit("[FATAL] Missing models/xgb/best_variant.json")
@@ -68,7 +67,7 @@ def load_model():
 def _norm_cat(s):
     return s.astype(str).str.strip().str.lower().str.replace(r"\s+", " ", regex=True)
 
-# ---------------- PREPROCESS ----------------
+# ============ PREPROCESS ============
 def preprocess(df_raw, feats, catsmap, scaler, lti_clip):
     df = df_raw.copy()
 
@@ -110,7 +109,7 @@ def preprocess(df_raw, feats, catsmap, scaler, lti_clip):
 
     return Xs, df
 
-# ---------------- PREDICT ----------------
+# ============ PREDICT ============
 def predict_df(df_raw, feats, cats, scaler, lti_clip, model_type, model, threshold=THRESHOLD):
     Xs, df_enriched = preprocess(df_raw, feats, cats, scaler, lti_clip)
 
@@ -138,7 +137,7 @@ def predict_one(feats, cats, scaler, lti_clip, model_type, model, row, threshold
     out = predict_df(df, feats, cats, scaler, lti_clip, model_type, model, threshold).iloc[0]
     return {"pred_prob": float(out["pred_prob"]), "pred_label": int(out["pred_label"]), "LTI": float(out["LTI"])}
 
-# ---------------- MAIN ----------------
+# ============ MAIN ============
 def main():
     vdir = load_best_variant()
     feats, cats, scaler, lti_clip = load_artifacts(vdir)

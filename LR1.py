@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# lr1.py — Train Logistic Regression on all 4 variants (scaled), compare by AUC, save best.
+# lr1.py trains the Logistic Regression model on all 4 variants, compare by AUC, save best.
 
 from pathlib import Path
 import json, pandas as pd
@@ -19,6 +18,7 @@ VARIANTS = [
     "no_outliers/smote/scaled",
 ]
 
+#Load the preprocessing variants
 def load_variant(vpath: Path):
     Xtr = pd.read_csv(vpath/"X_train.csv")
     ytr = pd.read_csv(vpath/"y_train.csv")[TARGET].astype(int)
@@ -27,6 +27,7 @@ def load_variant(vpath: Path):
     assert list(Xtr.columns)==list(Xte.columns)
     return Xtr,ytr,Xte,yte
 
+# Training and testing pipeline for logistic regression
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     rows = []

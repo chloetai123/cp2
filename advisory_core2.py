@@ -1,24 +1,10 @@
-#!/usr/bin/env python3
-"""
-advisory_core.py — advisory logic for the personal loan system.
-
-This module:
-  - Loads the trained XGBoost model and preprocessing artifacts via predict_raw1.py
-  - Loads thresholds.json (produced by thresholds.py)
-  - For APPROVED applicants:
-        * Chooses a document checklist based on Employment_Status
-        * Returns a ready-made checklist (no GPT-4 call)
-  - For NOT APPROVED applicants:
-        * Compares the user input against thresholds
-        * Builds a structured prompt
-        * Calls GPT-4 (or compatible) to generate personalized advice
-"""
+# advisory_core2.py - Generates financial advise, eligibility explanations, and post-application steps. 
 
 from pathlib import Path
 from typing import Dict, Any, List, Tuple, Optional
 import json
 
-# ---------------- CONFIG ----------------
+# ============CONFIG ============
 
 THRESHOLDS_PATH = Path("thresholds/thresholds.json")
 
@@ -28,7 +14,7 @@ NUM_COLS = ["Annual_Income", "Loan_Amount_Requested", "Loan_Term"]
 DISCRETE_DEP_COL = "Dependents"     
 BINARY_LOAN_HISTORY_COL = "Loan_History"
 
-# Simple document lists (you can edit these)
+# Document list 
 DOCS_SALARIED = [
     "Application Form",
     "Copy of NRIC / Passport",
@@ -46,7 +32,7 @@ DOCS_NON_SALARIED = [
 ]
 
 
-# ---------------- THRESHOLDS LOADING ----------------
+# ============THRESHOLDS LOADING ============
 
 def load_thresholds(path: Path = THRESHOLDS_PATH) -> Dict[str, Any]:
     """
@@ -68,28 +54,17 @@ def _safe_get(d: Dict[str, Any], key: str, default=None):
     return d.get(key, default) if isinstance(d, dict) else default
 
 
-# ---------------- THRESHOLD COMPARISON ----------------
+# ============THRESHOLD COMPARISON ============
+## Compare user input against thresholds 
 
 def compare_to_thresholds(
     user_input: Dict[str, Any],
     thresholds: Dict[str, Any],
 ) -> List[Dict[str, Any]]:
-    """
-    Compare one user input row against thresholds.
 
-    Returns a list of dicts, each like:
-      {
-        "feature": str,
-        "input_value": ...,
-        "threshold_info": str,
-        "type": "categorical" | "numerical" | "discrete" | "binary",
-        "flagged": bool,
-        "reason": str   # short explanation
-      }
-    """
     flags: List[Dict[str, Any]] = []
 
-    # ----- 1) Categorical: flag if not top-1 (mode) ----- #
+    # 1) Categorical: flag if not top-1 (mode) 
     cat_thr = _safe_get(thresholds, "categorical", {})
 
     for col in CAT_COLS:
@@ -130,7 +105,7 @@ def compare_to_thresholds(
             "reason": reason,
         })
 
-    # ----- 2) Numerical: outside IQR (Q1–Q3) ----- #
+    # 2) Numerical: flag if falls outside IQR  
     num_thr = _safe_get(thresholds, "numerical", {})
 
     for col in NUM_COLS:
@@ -139,7 +114,6 @@ def compare_to_thresholds(
 
         lo = hi = None
         if isinstance(entry, dict):
-            # We expect something like: { "type":"numerical", "method":"iqr", "q1": ..., "q3": ... }
             lo = entry.get("q1", None)
             hi = entry.get("q3", None)
 
@@ -176,7 +150,7 @@ def compare_to_thresholds(
             "reason": reason,
         })
 
-    # ----- 3) Discrete: Dependents -> threshold = mode ----- #
+    # 3) Discrete: flag if its not mode value
     dep_entry = _safe_get(thresholds, "discrete", {}).get(DISCRETE_DEP_COL, None)
 
     # dep_entry might be a dict like: { "type": "discrete", "method": "mode", "threshold": 3 }
@@ -216,10 +190,9 @@ def compare_to_thresholds(
         "reason": dep_reason,
     })
 
-    # ----- 4) Binary: Loan_History -> threshold = mode ----- #
+    # 4) Binary: flag if its not mode value
     bin_entry = _safe_get(thresholds, "binary", {}).get(BINARY_LOAN_HISTORY_COL, None)
 
-    # bin_entry might be a dict like { "type": "binary", "method": "mode", "threshold": 0 }
     if isinstance(bin_entry, dict):
         bin_thr = bin_entry.get("threshold", None)
     else:
@@ -236,7 +209,6 @@ def compare_to_thresholds(
 
     if flagged_bin:
         if bin_thr == 1:
-            # typical good history, user is 0
             reason = (
                 f"Most approved applicants have a positive credit history (Loan_History={bin_thr}), "
                 f"but your input is {bin_val}. Approval can still be possible if other factors "
@@ -270,24 +242,9 @@ def compare_to_thresholds(
     return flags
 
 
-# ---------------- GPT PROMPT BUILDERS ----------------
+# ============ GPT PROMPT BUILDERS ============
 
 def build_flag_blocks_for_gpt(flags: List[Dict[str, Any]]) -> str:
-    """
-    Build the text block to embed in your GPT-4 prompt (for REJECTED cases).
-
-    For numerical features:
-      Feature: X
-      Input value: ...
-      Required Threshold: ...
-      Advice: [One sentence suggesting how to improve]
-
-    For categorical/discrete/binary:
-      Feature: X
-      Input value: ...
-      Required Threshold: ...
-      Note: <short explanation, no "how to improve">
-    """
     lines: List[str] = []
 
     for f in flags:
@@ -300,7 +257,6 @@ def build_flag_blocks_for_gpt(flags: List[Dict[str, Any]]) -> str:
         reason = f["reason"]
 
         if f["type"] == "numerical":
-            # numerical – follow your requested format; advice to be filled by GPT-4
             lines.append(
                 f"Feature: {feature}\n"
                 f"Input value: {val}\n"
@@ -308,7 +264,6 @@ def build_flag_blocks_for_gpt(flags: List[Dict[str, Any]]) -> str:
                 f"Advice: [One sentence suggesting how to improve]\n"
             )
         else:
-            # categorical / discrete / binary – explanation only
             lines.append(
                 f"Feature: {feature}\n"
                 f"Input value: {val}\n"
@@ -320,9 +275,7 @@ def build_flag_blocks_for_gpt(flags: List[Dict[str, Any]]) -> str:
 
 
 def build_rejected_prompt(user_input: Dict[str, Any], flags_block: str) -> str:
-    """
-    Build the full GPT-4 prompt for NOT APPROVED applicants.
-    """
+
     base = (
         "You are a Malaysian financial advisor.\n"
         "A user's personal loan application was NOT approved.\n\n"
@@ -351,21 +304,9 @@ def build_rejected_prompt(user_input: Dict[str, Any], flags_block: str) -> str:
     return base
 
 
-# ---------------- DOCUMENT LOGIC (APPROVED) ----------------
+# ============DOCUMENT LOGIC (APPROVED) ============
 
 def select_docs_for_user(user_input: Dict[str, Any]) -> List[str]:
-    """
-    Choose the appropriate document checklist based on employment type.
-
-    In your dataset Employment_Status has at least:
-      - employed
-      - self-employed
-      - unemployed
-
-    Rules (as you requested):
-      - employed, unemployed   -> DOCS_SALARIED
-      - self-employed          -> DOCS_NON_SALARIED
-    """
     emp_raw = user_input.get("Employment_Status", "")
     emp = str(emp_raw).strip().lower()
 
@@ -377,17 +318,13 @@ def select_docs_for_user(user_input: Dict[str, Any]) -> List[str]:
 
 
 def build_docs_checklist_text(doc_list: List[str]) -> str:
-    """
-    Build a simple, final checklist text (no GPT) for APPROVED applicants.
-    This string is what you will show directly in Gradio.
-    """
     lines = ["Checklist of Required Documents for applying personal loan in Malaysia:"]
     for i, d in enumerate(doc_list, start=1):
         lines.append(f"{i}. {d}")
     return "\n".join(lines)
 
 
-# ---------------- GPT-4 CALL WRAPPER ----------------
+# ============GPT-4 CALL WRAPPER ============
 
 try:
     from openai import OpenAI  # type: ignore
@@ -397,11 +334,6 @@ except Exception:
 
 
 def call_gpt4(prompt: str) -> str:
-    """Call GPT-4 (or compatible) with the given prompt.
-
-    If OpenAI is not configured, we simply return the prompt so the flow
-    still works for testing.
-    """
     if _openai_client is None:
         return (
             "[GPT-4 not configured]\n"
@@ -420,7 +352,7 @@ def call_gpt4(prompt: str) -> str:
         return "[ERROR] GPT-4 response could not be parsed."
 
 
-# ---------------- MODEL LOADING (FROM predict_raw1.py) ----------------
+# ============MODEL LOADING (FROM predict_raw1.py) ============
 
 _model_cache: Optional[
     Tuple[List[str], Dict[str, Any], Any, Optional[Tuple[float, float]], str, Any]
@@ -428,15 +360,6 @@ _model_cache: Optional[
 
 
 def _load_model_and_artifacts():
-    """
-    Load best XGBoost model + artifacts from predict_raw1.py once.
-
-    Uses:
-      - load_best_variant()
-      - load_artifacts(vdir)
-      - load_model()
-    defined inside predict_raw1.py.
-    """
     global _model_cache
     if _model_cache is not None:
         return _model_cache
@@ -445,7 +368,7 @@ def _load_model_and_artifacts():
         from predict_raw1 import load_best_variant, load_artifacts, load_model
     except ImportError as e:
         raise ImportError(
-            "advisory_core.py: could not import required functions from predict_raw1.py. "
+            "advisory_core2.py: could not import required functions from predict_raw1.py. "
             "Make sure predict_raw1.py is in the same folder and defines "
             "load_best_variant, load_artifacts, and load_model."
         ) from e
@@ -458,21 +381,9 @@ def _load_model_and_artifacts():
     return _model_cache
 
 
-# ---------------- MAIN ENTRY: RUN ADVISORY ----------------
+# ============ MAIN: RUN ADVISORY ============
 
 def run_advisory(user_input: Dict[str, Any]) -> Dict[str, Any]:
-    """End-to-end advisory for one applicant.
-
-    Steps:
-      1. Use predict_raw1.predict_one(...) to get pred_prob, pred_label, LTI.
-      2. Load thresholds.json.
-      3. If approved:
-            - Choose document checklist based on Employment_Status
-            - Build final checklist text (no GPT call)
-         If rejected:
-            - Compare to thresholds, build advisory prompt, and call GPT-4.
-      4. Return everything as a dict for Gradio to display.
-    """
     # 1) Load model + artifacts
     feats, cats, scaler, lti_clip, model_type, model = _load_model_and_artifacts()
 
@@ -500,11 +411,11 @@ def run_advisory(user_input: Dict[str, Any]) -> Dict[str, Any]:
     advisory_text = ""
 
     if pred_label == 1:
-        # ---------------- APPROVED: document checklist only (no GPT) ----------------
+        # ============ APPROVED: document checklist only (no GPT) ============
         docs = select_docs_for_user(user_input)
         advisory_text = build_docs_checklist_text(docs)
     else:
-        # ---------------- NOT APPROVED: threshold comparison + GPT advisory ----------------
+        # ============ NOT APPROVED: threshold comparison + GPT advisory ============
         flags = compare_to_thresholds(user_input, thresholds)
         flags_block = build_flag_blocks_for_gpt(flags)
         gpt_prompt = build_rejected_prompt(user_input, flags_block)
@@ -514,14 +425,13 @@ def run_advisory(user_input: Dict[str, Any]) -> Dict[str, Any]:
         "pred_label": pred_label,
         "pred_prob": pred_prob,
         "LTI": lti_val,
-        "documents": docs,          # only non-empty for approved cases
-        "flags": flags,             # only non-empty for rejected cases
-        "gpt_prompt": gpt_prompt,   # useful for debugging
-        "advisory_text": advisory_text,  # final text to show in Gradio
+        "documents": docs,          
+        "flags": flags,             
+        "gpt_prompt": gpt_prompt,   
+        "advisory_text": advisory_text,  
     }
 
-
-# ---------------- OPTIONAL LOCAL DEMO ----------------
+# ============ OPTIONAL LOCAL DEMO ============
 
 if __name__ == "__main__":
     # Example rejected case

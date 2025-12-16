@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
-# boundary.py — compact boundary dataset generator (no Case_ID/Group)
-# - Numeric levels: min, median, max (from TRAIN, inverse-scaled)
-# - Categories: top-2 most frequent for multi-class (from TRAIN via OHE dummies)
-# - Gender & Loan_History: single mode value from TRAIN
-# - Output: boundary_cases.csv (RAW schema for predict_raw.py)
+# boundary.py — Compute the boundary cases 
 
 from pathlib import Path
 import json
@@ -12,7 +7,7 @@ import pandas as pd
 import joblib
 from collections import Counter
 
-# ---------------- Paths ----------------
+# ============ Paths ============
 MODELS_DIR = Path("models/xgb")
 BEST_META  = MODELS_DIR / "best_variant.json"
 OUT_CSV    = Path("boundary_cases.csv")
@@ -72,8 +67,6 @@ def main():
         num_levels[c] = levels
 
     # 4) Category selection
-    #    Multi-class: choose top-2 most frequent based on OHE dummy sums.
-    #    Binaries (Gender, Loan_History): choose mode (0/1) from TRAIN then map to raw label.
     def top_k_for_col(base_col: str, k: int = TOP_K_MULTI):
         vals = catsmap.get(base_col, [])
         if not vals:
@@ -104,8 +97,8 @@ def main():
         cnt = Counter(s)
         return 1 if cnt[1] >= cnt[0] else 0
 
-    gender_mode = mode01("Gender")              # 1→male, 0→female (per your encoding)
-    loanhist_mode = mode01("Loan_History")      # 1 or 0
+    gender_mode = mode01("Gender")              
+    loanhist_mode = mode01("Loan_History")      
     gender_val = "male" if gender_mode == 1 else "female"
 
     # 5) Cross-product: categories (with gender & loan history fixed to mode) × numeric levels
@@ -125,7 +118,7 @@ def main():
                                     rows.append({
                                         "Gender": gender_val,
                                         "Marital_Status": ms,
-                                        "Dependents": str(dp),  # OHE trained on string codes
+                                        "Dependents": str(dp),  
                                         "Education": edu,
                                         "Employment_Status": emp,
                                         "City/Town": city,

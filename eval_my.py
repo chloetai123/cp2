@@ -1,10 +1,4 @@
-# eval_my.py
-#
-# Evaluate the existing XGBoost model (trained on ve1.csv)
-# on the Malaysian synthetic dataset: loan_dataset_malaysia1.csv
-#
-# This measures "agreement" between the model and the synthetic labels,
-# NOT real-world accuracy.
+# eval_my.py evaluates the existing XGBoost model (trained on ve1.csv) using the Malaysian synthetic dataset: loan_dataset_malaysia1.csv
 
 import json
 from pathlib import Path
@@ -22,7 +16,7 @@ from sklearn.metrics import (
     confusion_matrix,
 )
 
-# ---------------- CONFIG ---------------- #
+# ============ CONFIG ============ #
 
 DATA_PATH = Path("loan_dataset_malaysia1.csv")
 
@@ -63,10 +57,7 @@ NUM_BASE_COLS = [
     "Loan_History",  # mapped to 0/1 or numeric
 ]
 
-# ------------------------------------------------ #
-#  Helpers for preprocessing to match training
-# ------------------------------------------------ #
-
+# Helpers for preprocessing to match training
 def find_artifacts_dir_from_best() -> Path:
     """Read best_variant.json and derive the artifacts directory."""
     if not BEST_VARIANT_JSON.exists():
@@ -84,9 +75,8 @@ def find_artifacts_dir_from_best() -> Path:
 
     return art_dir
 
-
+#Loading preprocessed artefacts
 def load_artifacts():
-    """Load scaler, one-hot category mapping, feature list, LTI clip, model."""
     # 1) artifacts dir (from best_variant.json written by xgb3.py)
     art_dir = find_artifacts_dir_from_best()
 
@@ -145,15 +135,8 @@ def load_artifacts():
         "model": bst,
     }
 
-
+#Standardizing text
 def std_text(s: pd.Series) -> pd.Series:
-    """
-    Simple text normalisation (aligned with pp3-style logic):
-    - cast to string
-    - replace -, _, / with space
-    - strip
-    - lowercase
-    """
     return (
         s.astype(str)
          .str.replace(r"[-_/]", " ", regex=True)
@@ -161,14 +144,8 @@ def std_text(s: pd.Series) -> pd.Series:
          .str.lower()
     )
 
-
+#Mapping binary columns
 def map_binary(series: pd.Series, kind: str) -> pd.Series:
-    """
-    Map binary columns similar to pp3.py:
-    - Gender: male/m/1 -> 1, female/f/0 -> 0
-    - Loan_History: prefer numeric if mostly numeric, else yes/no style text.
-    Returns float64 so it can go into scaler directly.
-    """
     if kind == "Gender":
         g = std_text(series)
         return pd.Series(
@@ -199,16 +176,11 @@ def map_binary(series: pd.Series, kind: str) -> pd.Series:
 
     return series
 
-
+#Preprocess dataset
 def preprocess_raw_df(df_raw: pd.DataFrame, A: dict) -> pd.DataFrame:
-    """
-    Transform raw input dataframe into the scaled feature matrix expected by XGBoost.
-    Uses the SAME categories, scaler, feature order as training.
-    Returns a *DataFrame* with columns ordered as A["features"].
-    """
     df = df_raw.copy()
 
-    # --- basic cleaning ---
+    # Cleaning
     missing = [c for c in RAW_COLS if c not in df.columns]
     if missing:
         raise ValueError(f"Missing required columns in synthetic dataset: {missing}")
@@ -226,7 +198,7 @@ def preprocess_raw_df(df_raw: pd.DataFrame, A: dict) -> pd.DataFrame:
     df["Loan_Amount_Requested"] = pd.to_numeric(df["Loan_Amount_Requested"], errors="coerce")
     df["Loan_Term"] = pd.to_numeric(df["Loan_Term"], errors="coerce")
 
-    # --- compute LTI ---
+    # Compute LTI
     with np.errstate(divide="ignore", invalid="ignore"):
         lti = df["Loan_Amount_Requested"] / df["Annual_Income"]
     lti = lti.replace([np.inf, -np.inf], np.nan)
@@ -234,7 +206,7 @@ def preprocess_raw_df(df_raw: pd.DataFrame, A: dict) -> pd.DataFrame:
     lti = lti.clip(A["lti_low"], A["lti_high"])
     df["LTI"] = lti
 
-    # --- categorical one-hot (manual, using ohe_categories.json) ---
+    # OHE
     cats_map = A["ohe_categories"]
     parts = []
     for c in CAT_COLS:
@@ -256,7 +228,7 @@ def preprocess_raw_df(df_raw: pd.DataFrame, A: dict) -> pd.DataFrame:
     else:
         X_cat_df = pd.DataFrame(index=df.index)
 
-    # --- numeric base (including LTI and binary numerics) ---
+    # Numeric base (including LTI and binary numerics) 
     X_num = df[NUM_BASE_COLS].copy()
 
     # combine
@@ -266,16 +238,13 @@ def preprocess_raw_df(df_raw: pd.DataFrame, A: dict) -> pd.DataFrame:
     feat_cols = A["features"]
     X = X.reindex(columns=feat_cols, fill_value=0.0)
 
-    # --- scale and return DataFrame ---
-    # IMPORTANT: pass DataFrame (with feature names) to scaler.transform
-    X_scaled_arr = A["scaler"].transform(X)  # StandardScaler can accept DataFrame
+    # Scale and return DataFrame 
+    X_scaled_arr = A["scaler"].transform(X)  
     X_scaled = pd.DataFrame(X_scaled_arr, columns=feat_cols, index=X.index)
 
     return X_scaled
 
-
-# ------------------------------------------------ #
-
+#Evaluate trained model using synthetic dataset (Malaysia-context)
 def main():
     if not DATA_PATH.exists():
         raise SystemExit(f"[ERROR] Synthetic dataset not found: {DATA_PATH}")

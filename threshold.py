@@ -1,5 +1,4 @@
-# thresholds.py
-# Build eligibility thresholds from APPROVED loans and save to thresholds/thresholds.json
+# thresholds.py - Build eligibility thresholds from APPROVED loans
 
 import json
 from pathlib import Path
@@ -7,20 +6,19 @@ import pandas as pd
 import numpy as np
 
 # ========== USER SETTINGS ==========
-data_path = "ve1.csv"                           # input dataset
-output_path = "thresholds/thresholds.json"      # output JSON path
+data_path = "ve1.csv"                           
+output_path = "thresholds/thresholds.json"      
 
 # Expected columns
 CAT_COLS = ["Gender", "Marital_Status", "Education", "Employment_Status", "City/Town"]
 NUM_COLS = ["Annual_Income", "Loan_Amount_Requested", "Loan_Term"]
 DISCRETE_COL = "Dependents"
-BINARY_COL = "Loan_History"          # 1=good, 0=bad (majority may differ)
-TARGET_COL = "Loan_Approval_Status"  # 1=approved, 0=rejected
+BINARY_COL = "Loan_History"          
+TARGET_COL = "Loan_Approval_Status"  
 # ===================================
 
 
 def _mode_safe(series: pd.Series):
-    """Return the most frequent value safely."""
     vc = series.dropna().value_counts()
     if vc.empty:
         return None
@@ -39,7 +37,6 @@ def _ensure_cols(df: pd.DataFrame, cols: list):
 
 
 def build_thresholds(df_approved: pd.DataFrame) -> dict:
-    """Compute thresholds from approved cases only."""
     _ensure_cols(df_approved, CAT_COLS + NUM_COLS + [DISCRETE_COL, BINARY_COL])
 
     out = {

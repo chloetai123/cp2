@@ -10,15 +10,17 @@ Project structure:
    - xgb3.py - XGBoost model
    - xgb_my.py - Malaysia-specific XGBoost model
    - eval_my.py - Cross-domain testing
-   - b1.py - Boundary testing
+   - b1.py - Generate boundary cases
    - predict_raw1.py - End-to-end prediction pipeline
    - ve1.py - Personal loan approval dataset
+   - boundary_cases.csv - Boundary cases dataset
    - loan_dataset_malaysia1.csv - Malaysia-based synthetic dataset
 
 2. Financial Advisory System
    - threshold.py - Generate threshold rules
    - threshold.json - The threshold rules
    - advisory_core2.py - Advisory logic
+   - apitest.py - Test if OpenAI API is configured
 
 3. User Interface
    - gradio_ui.py - Main Gradio user interface
@@ -44,7 +46,15 @@ The system is designed to be executed in the following logical order.
    - Run advisory_core2.py
 9. Develop the user interface
    - Run gradio_ui.py
-  
+
+OpenAI API configurations steps:
+
+1. create OpenAI API key
+2. Set encironment variable:
+   - macOS / Linux: export OPENAI_API_KEY = "paste_your_api_key_here"
+   - Windows: setx OPENAI_API_KEY = "paste_your_api_key_here"
+3. Run apitest.py to ensure API key is correctly configured
+
 Dataset:
 The project uses a publicly available dataset obtained from Kaggle repository to build the model and uses a AI-generated Malaysia-based synthetic dataset to perform cross-domain testing and validate the model's learnability under localized constraints and rules. 
 

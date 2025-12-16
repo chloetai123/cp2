@@ -1,25 +1,26 @@
-# eda.py — clean & simple EDA for veori.csv
-# Run: python eda.py
+#eda.py performs exploratory data analysis on ve1.csv dataset
 
 import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# DATA_PATH = "loan_dataset_malaysia1.csv"
-DATA_PATH = "ve1.csv"
 
+DATA_PATH = "ve1.csv"
 OUTPUT_DIR = "eda_outputs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# ---------- helpers ----------
+# ========== helpers ==========
+#Save DF schema to text
 def save_txt_info(df, path):
     with open(path, "w") as f:
         df.info(buf=f)
 
+#Sanitize string for file names
 def sanitize(name):
     return str(name).replace("/", "_").replace("\\", "_")
 
+#Find column by alias
 def find_col(df, aliases):
     lower_map = {c.lower(): c for c in df.columns}
     for a in aliases:
@@ -27,8 +28,8 @@ def find_col(df, aliases):
             return lower_map[a.lower()]
     return None
 
+#IQR-Based outlier detection mask
 def iqr_mask(s):
-    """Return boolean mask for IQR outliers (1.5×)."""
     s_clean = s.dropna()
     if s_clean.empty:
         return pd.Series(False, index=s.index)
@@ -37,8 +38,8 @@ def iqr_mask(s):
     lower, upper = q1 - 1.5 * iqr, q3 + 1.5 * iqr
     return (s < lower) | (s > upper)
 
+#One-dimensional Gassian KDE
 def gaussian_kde_1d(x, grid, bw=None):
-    """Simple Gaussian KDE using numpy only."""
     x = np.asarray(x, dtype=float)
     x = x[np.isfinite(x)]
     n = len(x)
@@ -50,7 +51,7 @@ def gaussian_kde_1d(x, grid, bw=None):
     kern = np.exp(-0.5 * diff**2) / (np.sqrt(2*np.pi) * bw)
     return kern.mean(axis=0)
 
-# ---------- load ----------
+# ========= Load Dataset ==========
 try:
     df = pd.read_csv(DATA_PATH)
 except FileNotFoundError:
@@ -58,7 +59,7 @@ except FileNotFoundError:
 
 print(f"Loaded {DATA_PATH} with shape {df.shape}")
 
-# ---------- column resolution ----------
+# ========= Resolve Dataset Column Names ==========
 target_col = find_col(df, ["Loan_Approval_Status"])
 
 cat_aliases = {
@@ -79,10 +80,10 @@ num_aliases = {
 resolved_cats = {k: find_col(df, v) for k, v in cat_aliases.items() if find_col(df, v)}
 resolved_nums = {k: find_col(df, v) for k, v in num_aliases.items() if find_col(df, v)}
 
-# ---------- dataset info ----------
+# ========== dataset info ==========
 save_txt_info(df, os.path.join(OUTPUT_DIR, "dataset_info.txt"))
 
-# ---------- summary stats & skewness ----------
+# ========== summary statistics & skewness ==========
 selected_num_names = ["Annual_Income", "Loan_Amount_Requested", "Loan_Term"]
 selected_cols = [resolved_nums[n] for n in selected_num_names if n in resolved_nums]
 if selected_cols:
@@ -91,7 +92,7 @@ if selected_cols:
     df[selected_cols].skew().to_frame("skewness").to_csv(
         os.path.join(OUTPUT_DIR, "skewness_selected.csv"))
 
-# ---------- class distribution (pie) ----------
+# ========== class distribution (pie) ==========
 if target_col:
     counts = df[target_col].value_counts(dropna=False)
     counts.to_csv(os.path.join(OUTPUT_DIR, "class_distribution.csv"))
@@ -103,7 +104,7 @@ if target_col:
     plt.savefig(os.path.join(OUTPUT_DIR, "loan_approval_status_pie.png"))
     plt.close()
 
-# ---------- categorical bar charts ----------
+# ========== categorical bar charts ==========
 for nice_name, col in resolved_cats.items():
     vc = df[col].astype("string").fillna("<NA>").value_counts(dropna=False)
     plt.figure(figsize=(7, 4))
@@ -118,7 +119,7 @@ for nice_name, col in resolved_cats.items():
     plt.savefig(os.path.join(OUTPUT_DIR, f"bar_{sanitize(nice_name)}.png"))
     plt.close()
 
-# ---------- histograms (frequency + smooth line) ----------
+# ========== histograms (frequency + smooth line) ==========
 for nice in ["Annual_Income", "Loan_Amount_Requested", "Loan_Term"]:
     col = resolved_nums.get(nice)
     if not col: continue
@@ -141,7 +142,7 @@ for nice in ["Annual_Income", "Loan_Amount_Requested", "Loan_Term"]:
     plt.close()
 
 
-# ---------- boxplots (with min/max/Q1/median/Q3 labels) ----------
+# ========== boxplots (with min/max/Q1/median/Q3 labels) ==========
 for nice_name in ["Annual_Income", "Loan_Amount_Requested","Loan_Term"]:
     col = resolved_nums.get(nice_name)
     if not col:
@@ -171,7 +172,7 @@ for nice_name in ["Annual_Income", "Loan_Amount_Requested","Loan_Term"]:
     plt.savefig(os.path.join(OUTPUT_DIR, f"box_{sanitize(nice_name)}.png"))
     plt.close()
 
-# ---------- IQR outliers (save separate files) ----------
+# ========== IQR outliers ==========
 
 loan_col = resolved_nums.get("Loan_Amount_Requested")
 if loan_col:

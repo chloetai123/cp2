@@ -1,17 +1,4 @@
-#!/usr/bin/env python3
-"""
-gradio_ui.py — Simple UI for Personal Loan Approval & Advisory System.
-
-Flow:
-  1. User fills in 10 input fields.
-  2. We build a user_input dict matching the model + advisory pipeline.
-  3. Call advisory_core.run_advisory(user_input).
-  4. Display:
-       - Loan decision (APPROVED / NOT APPROVED)
-       - Predicted approval probability
-       - Document checklist (for approved cases)
-       - Advisory / explanation (for rejected cases, from GPT-4 or fallback)
-"""
+#gradio_ui.py - Develop the user interface using Gradio to connect loan approval prediction system and financial advisory system. 
 
 from typing import Dict, Any, Tuple
 
@@ -33,21 +20,6 @@ def predict_and_advise(
     loan_amount_requested: float,
     loan_term: int,
 ) -> Tuple[str, str, str, str]:
-    """
-    Wraps advisory_core.run_advisory for Gradio.
-
-    Inputs come from the UI widgets.
-    We convert them into the exact feature names used by the model:
-
-      Gender, Marital_Status, Dependents, Education, Employment_Status,
-      City/Town, Annual_Income, Loan_History, Loan_Amount_Requested, Loan_Term
-
-    Returns:
-      - decision_text  (e.g. "APPROVED" / "NOT APPROVED")
-      - prob_text      (e.g. "0.8421")
-      - docs_text      (multi-line string, or message if none)
-      - advisory_text  (multi-line string, GPT-4 or fallback)
-    """
 
     # 1) Build user_input dict for the pipeline
     user_input: Dict[str, Any] = {
@@ -87,10 +59,8 @@ def predict_and_advise(
         docs_text = "No document checklist (loan not approved or not applicable)."
 
     # 6) Advisory behaviour:
-    #    - If APPROVED  -> leave advisory blank
-    #    - If REJECTED  -> show advisory_text (GPT-4 or fallback)
     if pred_label == 1:
-        advisory_out = ""   # leave panel empty for approved loans
+        advisory_out = ""   
     else:
         advisory_out = advisory_text if advisory_text else "No advisory text generated."
 

@@ -1,3 +1,5 @@
+#apitest.py - to test if the GPT-4 API is correctly configured
+
 from openai import OpenAI
 import os
 

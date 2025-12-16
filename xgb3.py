@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # xgb3.py — Train XGBoost on all 4 preprocessed variants, compare by AUC, save best model.
 
 from pathlib import Path
@@ -18,6 +17,7 @@ VARIANTS = [
     "no_outliers/smote/scaled",
 ]
 
+#===== XGBoost hyperparameters settings =====
 PARAMS = dict(
     objective="binary:logistic",
     eval_metric="logloss",
@@ -40,6 +40,7 @@ def load_variant(vpath: Path):
     assert list(Xtr.columns)==list(Xte.columns)
     return Xtr,ytr,Xte,yte
 
+#Training and testing on XGBoost model
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     rows = []
