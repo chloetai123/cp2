@@ -43,13 +43,10 @@ The system is designed to be executed in the following logical order.
    - Run gradio_ui.py
   
 Dataset:
-The priject uses a publicly available dataset obtained from Kaggle repository to build the model 
-and uses a AI-generated Malaysia-based synthetic dataset to perform cross-domain testing and validate
-the model's learnability under localized constraints and rules. 
+The project uses a publicly available dataset obtained from Kaggle repository to build the model and uses a AI-generated Malaysia-based synthetic dataset to perform cross-domain testing and validate the model's learnability under localized constraints and rules. 
 
 Reproducibility:
-All results can be reporduced by running the provided scripts and 
-randomness is controlled where applicable, but minor variations in metrics are expected due to stochastic processes in machine learning.
+All results can be reporduced by running the provided scripts and randomness is controlled where applicable, but minor variations in metrics are expected due to stochastic processes in machine learning.
 
 Notes:
 This repository demonstrates the methodology, system design, and implmentation. 
