@@ -1,0 +1,865 @@
+Gender,Marital_Status,Dependents,Education,Employment_Status,City/Town,Annual_Income,Loan_History,Loan_Amount_Requested,Loan_Term
+male,married,3,graduate,employed,urban,20020,0,5006,12
+male,married,3,graduate,employed,urban,20020,0,5006,124
+male,married,3,graduate,employed,urban,20020,0,5006,239
+male,married,3,graduate,employed,urban,20020,0,20231,12
+male,married,3,graduate,employed,urban,20020,0,20231,124
+male,married,3,graduate,employed,urban,20020,0,20231,239
+male,married,3,graduate,employed,urban,20020,0,38834,12
+male,married,3,graduate,employed,urban,20020,0,38834,124
+male,married,3,graduate,employed,urban,20020,0,38834,239
+male,married,3,graduate,employed,urban,68697,0,5006,12
+male,married,3,graduate,employed,urban,68697,0,5006,124
+male,married,3,graduate,employed,urban,68697,0,5006,239
+male,married,3,graduate,employed,urban,68697,0,20231,12
+male,married,3,graduate,employed,urban,68697,0,20231,124
+male,married,3,graduate,employed,urban,68697,0,20231,239
+male,married,3,graduate,employed,urban,68697,0,38834,12
+male,married,3,graduate,employed,urban,68697,0,38834,124
+male,married,3,graduate,employed,urban,68697,0,38834,239
+male,married,3,graduate,employed,urban,149961,0,5006,12
+male,married,3,graduate,employed,urban,149961,0,5006,124
+male,married,3,graduate,employed,urban,149961,0,5006,239
+male,married,3,graduate,employed,urban,149961,0,20231,12
+male,married,3,graduate,employed,urban,149961,0,20231,124
+male,married,3,graduate,employed,urban,149961,0,20231,239
+male,married,3,graduate,employed,urban,149961,0,38834,12
+male,married,3,graduate,employed,urban,149961,0,38834,124
+male,married,3,graduate,employed,urban,149961,0,38834,239
+male,married,3,graduate,employed,suburban,20020,0,5006,12
+male,married,3,graduate,employed,suburban,20020,0,5006,124
+male,married,3,graduate,employed,suburban,20020,0,5006,239
+male,married,3,graduate,employed,suburban,20020,0,20231,12
+male,married,3,graduate,employed,suburban,20020,0,20231,124
+male,married,3,graduate,employed,suburban,20020,0,20231,239
+male,married,3,graduate,employed,suburban,20020,0,38834,12
+male,married,3,graduate,employed,suburban,20020,0,38834,124
+male,married,3,graduate,employed,suburban,20020,0,38834,239
+male,married,3,graduate,employed,suburban,68697,0,5006,12
+male,married,3,graduate,employed,suburban,68697,0,5006,124
+male,married,3,graduate,employed,suburban,68697,0,5006,239
+male,married,3,graduate,employed,suburban,68697,0,20231,12
+male,married,3,graduate,employed,suburban,68697,0,20231,124
+male,married,3,graduate,employed,suburban,68697,0,20231,239
+male,married,3,graduate,employed,suburban,68697,0,38834,12
+male,married,3,graduate,employed,suburban,68697,0,38834,124
+male,married,3,graduate,employed,suburban,68697,0,38834,239
+male,married,3,graduate,employed,suburban,149961,0,5006,12
+male,married,3,graduate,employed,suburban,149961,0,5006,124
+male,married,3,graduate,employed,suburban,149961,0,5006,239
+male,married,3,graduate,employed,suburban,149961,0,20231,12
+male,married,3,graduate,employed,suburban,149961,0,20231,124
+male,married,3,graduate,employed,suburban,149961,0,20231,239
+male,married,3,graduate,employed,suburban,149961,0,38834,12
+male,married,3,graduate,employed,suburban,149961,0,38834,124
+male,married,3,graduate,employed,suburban,149961,0,38834,239
+male,married,3,graduate,self employed,urban,20020,0,5006,12
+male,married,3,graduate,self employed,urban,20020,0,5006,124
+male,married,3,graduate,self employed,urban,20020,0,5006,239
+male,married,3,graduate,self employed,urban,20020,0,20231,12
+male,married,3,graduate,self employed,urban,20020,0,20231,124
+male,married,3,graduate,self employed,urban,20020,0,20231,239
+male,married,3,graduate,self employed,urban,20020,0,38834,12
+male,married,3,graduate,self employed,urban,20020,0,38834,124
+male,married,3,graduate,self employed,urban,20020,0,38834,239
+male,married,3,graduate,self employed,urban,68697,0,5006,12
+male,married,3,graduate,self employed,urban,68697,0,5006,124
+male,married,3,graduate,self employed,urban,68697,0,5006,239
+male,married,3,graduate,self employed,urban,68697,0,20231,12
+male,married,3,graduate,self employed,urban,68697,0,20231,124
+male,married,3,graduate,self employed,urban,68697,0,20231,239
+male,married,3,graduate,self employed,urban,68697,0,38834,12
+male,married,3,graduate,self employed,urban,68697,0,38834,124
+male,married,3,graduate,self employed,urban,68697,0,38834,239
+male,married,3,graduate,self employed,urban,149961,0,5006,12
+male,married,3,graduate,self employed,urban,149961,0,5006,124
+male,married,3,graduate,self employed,urban,149961,0,5006,239
+male,married,3,graduate,self employed,urban,149961,0,20231,12
+male,married,3,graduate,self employed,urban,149961,0,20231,124
+male,married,3,graduate,self employed,urban,149961,0,20231,239
+male,married,3,graduate,self employed,urban,149961,0,38834,12
+male,married,3,graduate,self employed,urban,149961,0,38834,124
+male,married,3,graduate,self employed,urban,149961,0,38834,239
+male,married,3,graduate,self employed,suburban,20020,0,5006,12
+male,married,3,graduate,self employed,suburban,20020,0,5006,124
+male,married,3,graduate,self employed,suburban,20020,0,5006,239
+male,married,3,graduate,self employed,suburban,20020,0,20231,12
+male,married,3,graduate,self employed,suburban,20020,0,20231,124
+male,married,3,graduate,self employed,suburban,20020,0,20231,239
+male,married,3,graduate,self employed,suburban,20020,0,38834,12
+male,married,3,graduate,self employed,suburban,20020,0,38834,124
+male,married,3,graduate,self employed,suburban,20020,0,38834,239
+male,married,3,graduate,self employed,suburban,68697,0,5006,12
+male,married,3,graduate,self employed,suburban,68697,0,5006,124
+male,married,3,graduate,self employed,suburban,68697,0,5006,239
+male,married,3,graduate,self employed,suburban,68697,0,20231,12
+male,married,3,graduate,self employed,suburban,68697,0,20231,124
+male,married,3,graduate,self employed,suburban,68697,0,20231,239
+male,married,3,graduate,self employed,suburban,68697,0,38834,12
+male,married,3,graduate,self employed,suburban,68697,0,38834,124
+male,married,3,graduate,self employed,suburban,68697,0,38834,239
+male,married,3,graduate,self employed,suburban,149961,0,5006,12
+male,married,3,graduate,self employed,suburban,149961,0,5006,124
+male,married,3,graduate,self employed,suburban,149961,0,5006,239
+male,married,3,graduate,self employed,suburban,149961,0,20231,12
+male,married,3,graduate,self employed,suburban,149961,0,20231,124
+male,married,3,graduate,self employed,suburban,149961,0,20231,239
+male,married,3,graduate,self employed,suburban,149961,0,38834,12
+male,married,3,graduate,self employed,suburban,149961,0,38834,124
+male,married,3,graduate,self employed,suburban,149961,0,38834,239
+male,married,3,high school,employed,urban,20020,0,5006,12
+male,married,3,high school,employed,urban,20020,0,5006,124
+male,married,3,high school,employed,urban,20020,0,5006,239
+male,married,3,high school,employed,urban,20020,0,20231,12
+male,married,3,high school,employed,urban,20020,0,20231,124
+male,married,3,high school,employed,urban,20020,0,20231,239
+male,married,3,high school,employed,urban,20020,0,38834,12
+male,married,3,high school,employed,urban,20020,0,38834,124
+male,married,3,high school,employed,urban,20020,0,38834,239
+male,married,3,high school,employed,urban,68697,0,5006,12
+male,married,3,high school,employed,urban,68697,0,5006,124
+male,married,3,high school,employed,urban,68697,0,5006,239
+male,married,3,high school,employed,urban,68697,0,20231,12
+male,married,3,high school,employed,urban,68697,0,20231,124
+male,married,3,high school,employed,urban,68697,0,20231,239
+male,married,3,high school,employed,urban,68697,0,38834,12
+male,married,3,high school,employed,urban,68697,0,38834,124
+male,married,3,high school,employed,urban,68697,0,38834,239
+male,married,3,high school,employed,urban,149961,0,5006,12
+male,married,3,high school,employed,urban,149961,0,5006,124
+male,married,3,high school,employed,urban,149961,0,5006,239
+male,married,3,high school,employed,urban,149961,0,20231,12
+male,married,3,high school,employed,urban,149961,0,20231,124
+male,married,3,high school,employed,urban,149961,0,20231,239
+male,married,3,high school,employed,urban,149961,0,38834,12
+male,married,3,high school,employed,urban,149961,0,38834,124
+male,married,3,high school,employed,urban,149961,0,38834,239
+male,married,3,high school,employed,suburban,20020,0,5006,12
+male,married,3,high school,employed,suburban,20020,0,5006,124
+male,married,3,high school,employed,suburban,20020,0,5006,239
+male,married,3,high school,employed,suburban,20020,0,20231,12
+male,married,3,high school,employed,suburban,20020,0,20231,124
+male,married,3,high school,employed,suburban,20020,0,20231,239
+male,married,3,high school,employed,suburban,20020,0,38834,12
+male,married,3,high school,employed,suburban,20020,0,38834,124
+male,married,3,high school,employed,suburban,20020,0,38834,239
+male,married,3,high school,employed,suburban,68697,0,5006,12
+male,married,3,high school,employed,suburban,68697,0,5006,124
+male,married,3,high school,employed,suburban,68697,0,5006,239
+male,married,3,high school,employed,suburban,68697,0,20231,12
+male,married,3,high school,employed,suburban,68697,0,20231,124
+male,married,3,high school,employed,suburban,68697,0,20231,239
+male,married,3,high school,employed,suburban,68697,0,38834,12
+male,married,3,high school,employed,suburban,68697,0,38834,124
+male,married,3,high school,employed,suburban,68697,0,38834,239
+male,married,3,high school,employed,suburban,149961,0,5006,12
+male,married,3,high school,employed,suburban,149961,0,5006,124
+male,married,3,high school,employed,suburban,149961,0,5006,239
+male,married,3,high school,employed,suburban,149961,0,20231,12
+male,married,3,high school,employed,suburban,149961,0,20231,124
+male,married,3,high school,employed,suburban,149961,0,20231,239
+male,married,3,high school,employed,suburban,149961,0,38834,12
+male,married,3,high school,employed,suburban,149961,0,38834,124
+male,married,3,high school,employed,suburban,149961,0,38834,239
+male,married,3,high school,self employed,urban,20020,0,5006,12
+male,married,3,high school,self employed,urban,20020,0,5006,124
+male,married,3,high school,self employed,urban,20020,0,5006,239
+male,married,3,high school,self employed,urban,20020,0,20231,12
+male,married,3,high school,self employed,urban,20020,0,20231,124
+male,married,3,high school,self employed,urban,20020,0,20231,239
+male,married,3,high school,self employed,urban,20020,0,38834,12
+male,married,3,high school,self employed,urban,20020,0,38834,124
+male,married,3,high school,self employed,urban,20020,0,38834,239
+male,married,3,high school,self employed,urban,68697,0,5006,12
+male,married,3,high school,self employed,urban,68697,0,5006,124
+male,married,3,high school,self employed,urban,68697,0,5006,239
+male,married,3,high school,self employed,urban,68697,0,20231,12
+male,married,3,high school,self employed,urban,68697,0,20231,124
+male,married,3,high school,self employed,urban,68697,0,20231,239
+male,married,3,high school,self employed,urban,68697,0,38834,12
+male,married,3,high school,self employed,urban,68697,0,38834,124
+male,married,3,high school,self employed,urban,68697,0,38834,239
+male,married,3,high school,self employed,urban,149961,0,5006,12
+male,married,3,high school,self employed,urban,149961,0,5006,124
+male,married,3,high school,self employed,urban,149961,0,5006,239
+male,married,3,high school,self employed,urban,149961,0,20231,12
+male,married,3,high school,self employed,urban,149961,0,20231,124
+male,married,3,high school,self employed,urban,149961,0,20231,239
+male,married,3,high school,self employed,urban,149961,0,38834,12
+male,married,3,high school,self employed,urban,149961,0,38834,124
+male,married,3,high school,self employed,urban,149961,0,38834,239
+male,married,3,high school,self employed,suburban,20020,0,5006,12
+male,married,3,high school,self employed,suburban,20020,0,5006,124
+male,married,3,high school,self employed,suburban,20020,0,5006,239
+male,married,3,high school,self employed,suburban,20020,0,20231,12
+male,married,3,high school,self employed,suburban,20020,0,20231,124
+male,married,3,high school,self employed,suburban,20020,0,20231,239
+male,married,3,high school,self employed,suburban,20020,0,38834,12
+male,married,3,high school,self employed,suburban,20020,0,38834,124
+male,married,3,high school,self employed,suburban,20020,0,38834,239
+male,married,3,high school,self employed,suburban,68697,0,5006,12
+male,married,3,high school,self employed,suburban,68697,0,5006,124
+male,married,3,high school,self employed,suburban,68697,0,5006,239
+male,married,3,high school,self employed,suburban,68697,0,20231,12
+male,married,3,high school,self employed,suburban,68697,0,20231,124
+male,married,3,high school,self employed,suburban,68697,0,20231,239
+male,married,3,high school,self employed,suburban,68697,0,38834,12
+male,married,3,high school,self employed,suburban,68697,0,38834,124
+male,married,3,high school,self employed,suburban,68697,0,38834,239
+male,married,3,high school,self employed,suburban,149961,0,5006,12
+male,married,3,high school,self employed,suburban,149961,0,5006,124
+male,married,3,high school,self employed,suburban,149961,0,5006,239
+male,married,3,high school,self employed,suburban,149961,0,20231,12
+male,married,3,high school,self employed,suburban,149961,0,20231,124
+male,married,3,high school,self employed,suburban,149961,0,20231,239
+male,married,3,high school,self employed,suburban,149961,0,38834,12
+male,married,3,high school,self employed,suburban,149961,0,38834,124
+male,married,3,high school,self employed,suburban,149961,0,38834,239
+male,married,1,graduate,employed,urban,20020,0,5006,12
+male,married,1,graduate,employed,urban,20020,0,5006,124
+male,married,1,graduate,employed,urban,20020,0,5006,239
+male,married,1,graduate,employed,urban,20020,0,20231,12
+male,married,1,graduate,employed,urban,20020,0,20231,124
+male,married,1,graduate,employed,urban,20020,0,20231,239
+male,married,1,graduate,employed,urban,20020,0,38834,12
+male,married,1,graduate,employed,urban,20020,0,38834,124
+male,married,1,graduate,employed,urban,20020,0,38834,239
+male,married,1,graduate,employed,urban,68697,0,5006,12
+male,married,1,graduate,employed,urban,68697,0,5006,124
+male,married,1,graduate,employed,urban,68697,0,5006,239
+male,married,1,graduate,employed,urban,68697,0,20231,12
+male,married,1,graduate,employed,urban,68697,0,20231,124
+male,married,1,graduate,employed,urban,68697,0,20231,239
+male,married,1,graduate,employed,urban,68697,0,38834,12
+male,married,1,graduate,employed,urban,68697,0,38834,124
+male,married,1,graduate,employed,urban,68697,0,38834,239
+male,married,1,graduate,employed,urban,149961,0,5006,12
+male,married,1,graduate,employed,urban,149961,0,5006,124
+male,married,1,graduate,employed,urban,149961,0,5006,239
+male,married,1,graduate,employed,urban,149961,0,20231,12
+male,married,1,graduate,employed,urban,149961,0,20231,124
+male,married,1,graduate,employed,urban,149961,0,20231,239
+male,married,1,graduate,employed,urban,149961,0,38834,12
+male,married,1,graduate,employed,urban,149961,0,38834,124
+male,married,1,graduate,employed,urban,149961,0,38834,239
+male,married,1,graduate,employed,suburban,20020,0,5006,12
+male,married,1,graduate,employed,suburban,20020,0,5006,124
+male,married,1,graduate,employed,suburban,20020,0,5006,239
+male,married,1,graduate,employed,suburban,20020,0,20231,12
+male,married,1,graduate,employed,suburban,20020,0,20231,124
+male,married,1,graduate,employed,suburban,20020,0,20231,239
+male,married,1,graduate,employed,suburban,20020,0,38834,12
+male,married,1,graduate,employed,suburban,20020,0,38834,124
+male,married,1,graduate,employed,suburban,20020,0,38834,239
+male,married,1,graduate,employed,suburban,68697,0,5006,12
+male,married,1,graduate,employed,suburban,68697,0,5006,124
+male,married,1,graduate,employed,suburban,68697,0,5006,239
+male,married,1,graduate,employed,suburban,68697,0,20231,12
+male,married,1,graduate,employed,suburban,68697,0,20231,124
+male,married,1,graduate,employed,suburban,68697,0,20231,239
+male,married,1,graduate,employed,suburban,68697,0,38834,12
+male,married,1,graduate,employed,suburban,68697,0,38834,124
+male,married,1,graduate,employed,suburban,68697,0,38834,239
+male,married,1,graduate,employed,suburban,149961,0,5006,12
+male,married,1,graduate,employed,suburban,149961,0,5006,124
+male,married,1,graduate,employed,suburban,149961,0,5006,239
+male,married,1,graduate,employed,suburban,149961,0,20231,12
+male,married,1,graduate,employed,suburban,149961,0,20231,124
+male,married,1,graduate,employed,suburban,149961,0,20231,239
+male,married,1,graduate,employed,suburban,149961,0,38834,12
+male,married,1,graduate,employed,suburban,149961,0,38834,124
+male,married,1,graduate,employed,suburban,149961,0,38834,239
+male,married,1,graduate,self employed,urban,20020,0,5006,12
+male,married,1,graduate,self employed,urban,20020,0,5006,124
+male,married,1,graduate,self employed,urban,20020,0,5006,239
+male,married,1,graduate,self employed,urban,20020,0,20231,12
+male,married,1,graduate,self employed,urban,20020,0,20231,124
+male,married,1,graduate,self employed,urban,20020,0,20231,239
+male,married,1,graduate,self employed,urban,20020,0,38834,12
+male,married,1,graduate,self employed,urban,20020,0,38834,124
+male,married,1,graduate,self employed,urban,20020,0,38834,239
+male,married,1,graduate,self employed,urban,68697,0,5006,12
+male,married,1,graduate,self employed,urban,68697,0,5006,124
+male,married,1,graduate,self employed,urban,68697,0,5006,239
+male,married,1,graduate,self employed,urban,68697,0,20231,12
+male,married,1,graduate,self employed,urban,68697,0,20231,124
+male,married,1,graduate,self employed,urban,68697,0,20231,239
+male,married,1,graduate,self employed,urban,68697,0,38834,12
+male,married,1,graduate,self employed,urban,68697,0,38834,124
+male,married,1,graduate,self employed,urban,68697,0,38834,239
+male,married,1,graduate,self employed,urban,149961,0,5006,12
+male,married,1,graduate,self employed,urban,149961,0,5006,124
+male,married,1,graduate,self employed,urban,149961,0,5006,239
+male,married,1,graduate,self employed,urban,149961,0,20231,12
+male,married,1,graduate,self employed,urban,149961,0,20231,124
+male,married,1,graduate,self employed,urban,149961,0,20231,239
+male,married,1,graduate,self employed,urban,149961,0,38834,12
+male,married,1,graduate,self employed,urban,149961,0,38834,124
+male,married,1,graduate,self employed,urban,149961,0,38834,239
+male,married,1,graduate,self employed,suburban,20020,0,5006,12
+male,married,1,graduate,self employed,suburban,20020,0,5006,124
+male,married,1,graduate,self employed,suburban,20020,0,5006,239
+male,married,1,graduate,self employed,suburban,20020,0,20231,12
+male,married,1,graduate,self employed,suburban,20020,0,20231,124
+male,married,1,graduate,self employed,suburban,20020,0,20231,239
+male,married,1,graduate,self employed,suburban,20020,0,38834,12
+male,married,1,graduate,self employed,suburban,20020,0,38834,124
+male,married,1,graduate,self employed,suburban,20020,0,38834,239
+male,married,1,graduate,self employed,suburban,68697,0,5006,12
+male,married,1,graduate,self employed,suburban,68697,0,5006,124
+male,married,1,graduate,self employed,suburban,68697,0,5006,239
+male,married,1,graduate,self employed,suburban,68697,0,20231,12
+male,married,1,graduate,self employed,suburban,68697,0,20231,124
+male,married,1,graduate,self employed,suburban,68697,0,20231,239
+male,married,1,graduate,self employed,suburban,68697,0,38834,12
+male,married,1,graduate,self employed,suburban,68697,0,38834,124
+male,married,1,graduate,self employed,suburban,68697,0,38834,239
+male,married,1,graduate,self employed,suburban,149961,0,5006,12
+male,married,1,graduate,self employed,suburban,149961,0,5006,124
+male,married,1,graduate,self employed,suburban,149961,0,5006,239
+male,married,1,graduate,self employed,suburban,149961,0,20231,12
+male,married,1,graduate,self employed,suburban,149961,0,20231,124
+male,married,1,graduate,self employed,suburban,149961,0,20231,239
+male,married,1,graduate,self employed,suburban,149961,0,38834,12
+male,married,1,graduate,self employed,suburban,149961,0,38834,124
+male,married,1,graduate,self employed,suburban,149961,0,38834,239
+male,married,1,high school,employed,urban,20020,0,5006,12
+male,married,1,high school,employed,urban,20020,0,5006,124
+male,married,1,high school,employed,urban,20020,0,5006,239
+male,married,1,high school,employed,urban,20020,0,20231,12
+male,married,1,high school,employed,urban,20020,0,20231,124
+male,married,1,high school,employed,urban,20020,0,20231,239
+male,married,1,high school,employed,urban,20020,0,38834,12
+male,married,1,high school,employed,urban,20020,0,38834,124
+male,married,1,high school,employed,urban,20020,0,38834,239
+male,married,1,high school,employed,urban,68697,0,5006,12
+male,married,1,high school,employed,urban,68697,0,5006,124
+male,married,1,high school,employed,urban,68697,0,5006,239
+male,married,1,high school,employed,urban,68697,0,20231,12
+male,married,1,high school,employed,urban,68697,0,20231,124
+male,married,1,high school,employed,urban,68697,0,20231,239
+male,married,1,high school,employed,urban,68697,0,38834,12
+male,married,1,high school,employed,urban,68697,0,38834,124
+male,married,1,high school,employed,urban,68697,0,38834,239
+male,married,1,high school,employed,urban,149961,0,5006,12
+male,married,1,high school,employed,urban,149961,0,5006,124
+male,married,1,high school,employed,urban,149961,0,5006,239
+male,married,1,high school,employed,urban,149961,0,20231,12
+male,married,1,high school,employed,urban,149961,0,20231,124
+male,married,1,high school,employed,urban,149961,0,20231,239
+male,married,1,high school,employed,urban,149961,0,38834,12
+male,married,1,high school,employed,urban,149961,0,38834,124
+male,married,1,high school,employed,urban,149961,0,38834,239
+male,married,1,high school,employed,suburban,20020,0,5006,12
+male,married,1,high school,employed,suburban,20020,0,5006,124
+male,married,1,high school,employed,suburban,20020,0,5006,239
+male,married,1,high school,employed,suburban,20020,0,20231,12
+male,married,1,high school,employed,suburban,20020,0,20231,124
+male,married,1,high school,employed,suburban,20020,0,20231,239
+male,married,1,high school,employed,suburban,20020,0,38834,12
+male,married,1,high school,employed,suburban,20020,0,38834,124
+male,married,1,high school,employed,suburban,20020,0,38834,239
+male,married,1,high school,employed,suburban,68697,0,5006,12
+male,married,1,high school,employed,suburban,68697,0,5006,124
+male,married,1,high school,employed,suburban,68697,0,5006,239
+male,married,1,high school,employed,suburban,68697,0,20231,12
+male,married,1,high school,employed,suburban,68697,0,20231,124
+male,married,1,high school,employed,suburban,68697,0,20231,239
+male,married,1,high school,employed,suburban,68697,0,38834,12
+male,married,1,high school,employed,suburban,68697,0,38834,124
+male,married,1,high school,employed,suburban,68697,0,38834,239
+male,married,1,high school,employed,suburban,149961,0,5006,12
+male,married,1,high school,employed,suburban,149961,0,5006,124
+male,married,1,high school,employed,suburban,149961,0,5006,239
+male,married,1,high school,employed,suburban,149961,0,20231,12
+male,married,1,high school,employed,suburban,149961,0,20231,124
+male,married,1,high school,employed,suburban,149961,0,20231,239
+male,married,1,high school,employed,suburban,149961,0,38834,12
+male,married,1,high school,employed,suburban,149961,0,38834,124
+male,married,1,high school,employed,suburban,149961,0,38834,239
+male,married,1,high school,self employed,urban,20020,0,5006,12
+male,married,1,high school,self employed,urban,20020,0,5006,124
+male,married,1,high school,self employed,urban,20020,0,5006,239
+male,married,1,high school,self employed,urban,20020,0,20231,12
+male,married,1,high school,self employed,urban,20020,0,20231,124
+male,married,1,high school,self employed,urban,20020,0,20231,239
+male,married,1,high school,self employed,urban,20020,0,38834,12
+male,married,1,high school,self employed,urban,20020,0,38834,124
+male,married,1,high school,self employed,urban,20020,0,38834,239
+male,married,1,high school,self employed,urban,68697,0,5006,12
+male,married,1,high school,self employed,urban,68697,0,5006,124
+male,married,1,high school,self employed,urban,68697,0,5006,239
+male,married,1,high school,self employed,urban,68697,0,20231,12
+male,married,1,high school,self employed,urban,68697,0,20231,124
+male,married,1,high school,self employed,urban,68697,0,20231,239
+male,married,1,high school,self employed,urban,68697,0,38834,12
+male,married,1,high school,self employed,urban,68697,0,38834,124
+male,married,1,high school,self employed,urban,68697,0,38834,239
+male,married,1,high school,self employed,urban,149961,0,5006,12
+male,married,1,high school,self employed,urban,149961,0,5006,124
+male,married,1,high school,self employed,urban,149961,0,5006,239
+male,married,1,high school,self employed,urban,149961,0,20231,12
+male,married,1,high school,self employed,urban,149961,0,20231,124
+male,married,1,high school,self employed,urban,149961,0,20231,239
+male,married,1,high school,self employed,urban,149961,0,38834,12
+male,married,1,high school,self employed,urban,149961,0,38834,124
+male,married,1,high school,self employed,urban,149961,0,38834,239
+male,married,1,high school,self employed,suburban,20020,0,5006,12
+male,married,1,high school,self employed,suburban,20020,0,5006,124
+male,married,1,high school,self employed,suburban,20020,0,5006,239
+male,married,1,high school,self employed,suburban,20020,0,20231,12
+male,married,1,high school,self employed,suburban,20020,0,20231,124
+male,married,1,high school,self employed,suburban,20020,0,20231,239
+male,married,1,high school,self employed,suburban,20020,0,38834,12
+male,married,1,high school,self employed,suburban,20020,0,38834,124
+male,married,1,high school,self employed,suburban,20020,0,38834,239
+male,married,1,high school,self employed,suburban,68697,0,5006,12
+male,married,1,high school,self employed,suburban,68697,0,5006,124
+male,married,1,high school,self employed,suburban,68697,0,5006,239
+male,married,1,high school,self employed,suburban,68697,0,20231,12
+male,married,1,high school,self employed,suburban,68697,0,20231,124
+male,married,1,high school,self employed,suburban,68697,0,20231,239
+male,married,1,high school,self employed,suburban,68697,0,38834,12
+male,married,1,high school,self employed,suburban,68697,0,38834,124
+male,married,1,high school,self employed,suburban,68697,0,38834,239
+male,married,1,high school,self employed,suburban,149961,0,5006,12
+male,married,1,high school,self employed,suburban,149961,0,5006,124
+male,married,1,high school,self employed,suburban,149961,0,5006,239
+male,married,1,high school,self employed,suburban,149961,0,20231,12
+male,married,1,high school,self employed,suburban,149961,0,20231,124
+male,married,1,high school,self employed,suburban,149961,0,20231,239
+male,married,1,high school,self employed,suburban,149961,0,38834,12
+male,married,1,high school,self employed,suburban,149961,0,38834,124
+male,married,1,high school,self employed,suburban,149961,0,38834,239
+male,single,3,graduate,employed,urban,20020,0,5006,12
+male,single,3,graduate,employed,urban,20020,0,5006,124
+male,single,3,graduate,employed,urban,20020,0,5006,239
+male,single,3,graduate,employed,urban,20020,0,20231,12
+male,single,3,graduate,employed,urban,20020,0,20231,124
+male,single,3,graduate,employed,urban,20020,0,20231,239
+male,single,3,graduate,employed,urban,20020,0,38834,12
+male,single,3,graduate,employed,urban,20020,0,38834,124
+male,single,3,graduate,employed,urban,20020,0,38834,239
+male,single,3,graduate,employed,urban,68697,0,5006,12
+male,single,3,graduate,employed,urban,68697,0,5006,124
+male,single,3,graduate,employed,urban,68697,0,5006,239
+male,single,3,graduate,employed,urban,68697,0,20231,12
+male,single,3,graduate,employed,urban,68697,0,20231,124
+male,single,3,graduate,employed,urban,68697,0,20231,239
+male,single,3,graduate,employed,urban,68697,0,38834,12
+male,single,3,graduate,employed,urban,68697,0,38834,124
+male,single,3,graduate,employed,urban,68697,0,38834,239
+male,single,3,graduate,employed,urban,149961,0,5006,12
+male,single,3,graduate,employed,urban,149961,0,5006,124
+male,single,3,graduate,employed,urban,149961,0,5006,239
+male,single,3,graduate,employed,urban,149961,0,20231,12
+male,single,3,graduate,employed,urban,149961,0,20231,124
+male,single,3,graduate,employed,urban,149961,0,20231,239
+male,single,3,graduate,employed,urban,149961,0,38834,12
+male,single,3,graduate,employed,urban,149961,0,38834,124
+male,single,3,graduate,employed,urban,149961,0,38834,239
+male,single,3,graduate,employed,suburban,20020,0,5006,12
+male,single,3,graduate,employed,suburban,20020,0,5006,124
+male,single,3,graduate,employed,suburban,20020,0,5006,239
+male,single,3,graduate,employed,suburban,20020,0,20231,12
+male,single,3,graduate,employed,suburban,20020,0,20231,124
+male,single,3,graduate,employed,suburban,20020,0,20231,239
+male,single,3,graduate,employed,suburban,20020,0,38834,12
+male,single,3,graduate,employed,suburban,20020,0,38834,124
+male,single,3,graduate,employed,suburban,20020,0,38834,239
+male,single,3,graduate,employed,suburban,68697,0,5006,12
+male,single,3,graduate,employed,suburban,68697,0,5006,124
+male,single,3,graduate,employed,suburban,68697,0,5006,239
+male,single,3,graduate,employed,suburban,68697,0,20231,12
+male,single,3,graduate,employed,suburban,68697,0,20231,124
+male,single,3,graduate,employed,suburban,68697,0,20231,239
+male,single,3,graduate,employed,suburban,68697,0,38834,12
+male,single,3,graduate,employed,suburban,68697,0,38834,124
+male,single,3,graduate,employed,suburban,68697,0,38834,239
+male,single,3,graduate,employed,suburban,149961,0,5006,12
+male,single,3,graduate,employed,suburban,149961,0,5006,124
+male,single,3,graduate,employed,suburban,149961,0,5006,239
+male,single,3,graduate,employed,suburban,149961,0,20231,12
+male,single,3,graduate,employed,suburban,149961,0,20231,124
+male,single,3,graduate,employed,suburban,149961,0,20231,239
+male,single,3,graduate,employed,suburban,149961,0,38834,12
+male,single,3,graduate,employed,suburban,149961,0,38834,124
+male,single,3,graduate,employed,suburban,149961,0,38834,239
+male,single,3,graduate,self employed,urban,20020,0,5006,12
+male,single,3,graduate,self employed,urban,20020,0,5006,124
+male,single,3,graduate,self employed,urban,20020,0,5006,239
+male,single,3,graduate,self employed,urban,20020,0,20231,12
+male,single,3,graduate,self employed,urban,20020,0,20231,124
+male,single,3,graduate,self employed,urban,20020,0,20231,239
+male,single,3,graduate,self employed,urban,20020,0,38834,12
+male,single,3,graduate,self employed,urban,20020,0,38834,124
+male,single,3,graduate,self employed,urban,20020,0,38834,239
+male,single,3,graduate,self employed,urban,68697,0,5006,12
+male,single,3,graduate,self employed,urban,68697,0,5006,124
+male,single,3,graduate,self employed,urban,68697,0,5006,239
+male,single,3,graduate,self employed,urban,68697,0,20231,12
+male,single,3,graduate,self employed,urban,68697,0,20231,124
+male,single,3,graduate,self employed,urban,68697,0,20231,239
+male,single,3,graduate,self employed,urban,68697,0,38834,12
+male,single,3,graduate,self employed,urban,68697,0,38834,124
+male,single,3,graduate,self employed,urban,68697,0,38834,239
+male,single,3,graduate,self employed,urban,149961,0,5006,12
+male,single,3,graduate,self employed,urban,149961,0,5006,124
+male,single,3,graduate,self employed,urban,149961,0,5006,239
+male,single,3,graduate,self employed,urban,149961,0,20231,12
+male,single,3,graduate,self employed,urban,149961,0,20231,124
+male,single,3,graduate,self employed,urban,149961,0,20231,239
+male,single,3,graduate,self employed,urban,149961,0,38834,12
+male,single,3,graduate,self employed,urban,149961,0,38834,124
+male,single,3,graduate,self employed,urban,149961,0,38834,239
+male,single,3,graduate,self employed,suburban,20020,0,5006,12
+male,single,3,graduate,self employed,suburban,20020,0,5006,124
+male,single,3,graduate,self employed,suburban,20020,0,5006,239
+male,single,3,graduate,self employed,suburban,20020,0,20231,12
+male,single,3,graduate,self employed,suburban,20020,0,20231,124
+male,single,3,graduate,self employed,suburban,20020,0,20231,239
+male,single,3,graduate,self employed,suburban,20020,0,38834,12
+male,single,3,graduate,self employed,suburban,20020,0,38834,124
+male,single,3,graduate,self employed,suburban,20020,0,38834,239
+male,single,3,graduate,self employed,suburban,68697,0,5006,12
+male,single,3,graduate,self employed,suburban,68697,0,5006,124
+male,single,3,graduate,self employed,suburban,68697,0,5006,239
+male,single,3,graduate,self employed,suburban,68697,0,20231,12
+male,single,3,graduate,self employed,suburban,68697,0,20231,124
+male,single,3,graduate,self employed,suburban,68697,0,20231,239
+male,single,3,graduate,self employed,suburban,68697,0,38834,12
+male,single,3,graduate,self employed,suburban,68697,0,38834,124
+male,single,3,graduate,self employed,suburban,68697,0,38834,239
+male,single,3,graduate,self employed,suburban,149961,0,5006,12
+male,single,3,graduate,self employed,suburban,149961,0,5006,124
+male,single,3,graduate,self employed,suburban,149961,0,5006,239
+male,single,3,graduate,self employed,suburban,149961,0,20231,12
+male,single,3,graduate,self employed,suburban,149961,0,20231,124
+male,single,3,graduate,self employed,suburban,149961,0,20231,239
+male,single,3,graduate,self employed,suburban,149961,0,38834,12
+male,single,3,graduate,self employed,suburban,149961,0,38834,124
+male,single,3,graduate,self employed,suburban,149961,0,38834,239
+male,single,3,high school,employed,urban,20020,0,5006,12
+male,single,3,high school,employed,urban,20020,0,5006,124
+male,single,3,high school,employed,urban,20020,0,5006,239
+male,single,3,high school,employed,urban,20020,0,20231,12
+male,single,3,high school,employed,urban,20020,0,20231,124
+male,single,3,high school,employed,urban,20020,0,20231,239
+male,single,3,high school,employed,urban,20020,0,38834,12
+male,single,3,high school,employed,urban,20020,0,38834,124
+male,single,3,high school,employed,urban,20020,0,38834,239
+male,single,3,high school,employed,urban,68697,0,5006,12
+male,single,3,high school,employed,urban,68697,0,5006,124
+male,single,3,high school,employed,urban,68697,0,5006,239
+male,single,3,high school,employed,urban,68697,0,20231,12
+male,single,3,high school,employed,urban,68697,0,20231,124
+male,single,3,high school,employed,urban,68697,0,20231,239
+male,single,3,high school,employed,urban,68697,0,38834,12
+male,single,3,high school,employed,urban,68697,0,38834,124
+male,single,3,high school,employed,urban,68697,0,38834,239
+male,single,3,high school,employed,urban,149961,0,5006,12
+male,single,3,high school,employed,urban,149961,0,5006,124
+male,single,3,high school,employed,urban,149961,0,5006,239
+male,single,3,high school,employed,urban,149961,0,20231,12
+male,single,3,high school,employed,urban,149961,0,20231,124
+male,single,3,high school,employed,urban,149961,0,20231,239
+male,single,3,high school,employed,urban,149961,0,38834,12
+male,single,3,high school,employed,urban,149961,0,38834,124
+male,single,3,high school,employed,urban,149961,0,38834,239
+male,single,3,high school,employed,suburban,20020,0,5006,12
+male,single,3,high school,employed,suburban,20020,0,5006,124
+male,single,3,high school,employed,suburban,20020,0,5006,239
+male,single,3,high school,employed,suburban,20020,0,20231,12
+male,single,3,high school,employed,suburban,20020,0,20231,124
+male,single,3,high school,employed,suburban,20020,0,20231,239
+male,single,3,high school,employed,suburban,20020,0,38834,12
+male,single,3,high school,employed,suburban,20020,0,38834,124
+male,single,3,high school,employed,suburban,20020,0,38834,239
+male,single,3,high school,employed,suburban,68697,0,5006,12
+male,single,3,high school,employed,suburban,68697,0,5006,124
+male,single,3,high school,employed,suburban,68697,0,5006,239
+male,single,3,high school,employed,suburban,68697,0,20231,12
+male,single,3,high school,employed,suburban,68697,0,20231,124
+male,single,3,high school,employed,suburban,68697,0,20231,239
+male,single,3,high school,employed,suburban,68697,0,38834,12
+male,single,3,high school,employed,suburban,68697,0,38834,124
+male,single,3,high school,employed,suburban,68697,0,38834,239
+male,single,3,high school,employed,suburban,149961,0,5006,12
+male,single,3,high school,employed,suburban,149961,0,5006,124
+male,single,3,high school,employed,suburban,149961,0,5006,239
+male,single,3,high school,employed,suburban,149961,0,20231,12
+male,single,3,high school,employed,suburban,149961,0,20231,124
+male,single,3,high school,employed,suburban,149961,0,20231,239
+male,single,3,high school,employed,suburban,149961,0,38834,12
+male,single,3,high school,employed,suburban,149961,0,38834,124
+male,single,3,high school,employed,suburban,149961,0,38834,239
+male,single,3,high school,self employed,urban,20020,0,5006,12
+male,single,3,high school,self employed,urban,20020,0,5006,124
+male,single,3,high school,self employed,urban,20020,0,5006,239
+male,single,3,high school,self employed,urban,20020,0,20231,12
+male,single,3,high school,self employed,urban,20020,0,20231,124
+male,single,3,high school,self employed,urban,20020,0,20231,239
+male,single,3,high school,self employed,urban,20020,0,38834,12
+male,single,3,high school,self employed,urban,20020,0,38834,124
+male,single,3,high school,self employed,urban,20020,0,38834,239
+male,single,3,high school,self employed,urban,68697,0,5006,12
+male,single,3,high school,self employed,urban,68697,0,5006,124
+male,single,3,high school,self employed,urban,68697,0,5006,239
+male,single,3,high school,self employed,urban,68697,0,20231,12
+male,single,3,high school,self employed,urban,68697,0,20231,124
+male,single,3,high school,self employed,urban,68697,0,20231,239
+male,single,3,high school,self employed,urban,68697,0,38834,12
+male,single,3,high school,self employed,urban,68697,0,38834,124
+male,single,3,high school,self employed,urban,68697,0,38834,239
+male,single,3,high school,self employed,urban,149961,0,5006,12
+male,single,3,high school,self employed,urban,149961,0,5006,124
+male,single,3,high school,self employed,urban,149961,0,5006,239
+male,single,3,high school,self employed,urban,149961,0,20231,12
+male,single,3,high school,self employed,urban,149961,0,20231,124
+male,single,3,high school,self employed,urban,149961,0,20231,239
+male,single,3,high school,self employed,urban,149961,0,38834,12
+male,single,3,high school,self employed,urban,149961,0,38834,124
+male,single,3,high school,self employed,urban,149961,0,38834,239
+male,single,3,high school,self employed,suburban,20020,0,5006,12
+male,single,3,high school,self employed,suburban,20020,0,5006,124
+male,single,3,high school,self employed,suburban,20020,0,5006,239
+male,single,3,high school,self employed,suburban,20020,0,20231,12
+male,single,3,high school,self employed,suburban,20020,0,20231,124
+male,single,3,high school,self employed,suburban,20020,0,20231,239
+male,single,3,high school,self employed,suburban,20020,0,38834,12
+male,single,3,high school,self employed,suburban,20020,0,38834,124
+male,single,3,high school,self employed,suburban,20020,0,38834,239
+male,single,3,high school,self employed,suburban,68697,0,5006,12
+male,single,3,high school,self employed,suburban,68697,0,5006,124
+male,single,3,high school,self employed,suburban,68697,0,5006,239
+male,single,3,high school,self employed,suburban,68697,0,20231,12
+male,single,3,high school,self employed,suburban,68697,0,20231,124
+male,single,3,high school,self employed,suburban,68697,0,20231,239
+male,single,3,high school,self employed,suburban,68697,0,38834,12
+male,single,3,high school,self employed,suburban,68697,0,38834,124
+male,single,3,high school,self employed,suburban,68697,0,38834,239
+male,single,3,high school,self employed,suburban,149961,0,5006,12
+male,single,3,high school,self employed,suburban,149961,0,5006,124
+male,single,3,high school,self employed,suburban,149961,0,5006,239
+male,single,3,high school,self employed,suburban,149961,0,20231,12
+male,single,3,high school,self employed,suburban,149961,0,20231,124
+male,single,3,high school,self employed,suburban,149961,0,20231,239
+male,single,3,high school,self employed,suburban,149961,0,38834,12
+male,single,3,high school,self employed,suburban,149961,0,38834,124
+male,single,3,high school,self employed,suburban,149961,0,38834,239
+male,single,1,graduate,employed,urban,20020,0,5006,12
+male,single,1,graduate,employed,urban,20020,0,5006,124
+male,single,1,graduate,employed,urban,20020,0,5006,239
+male,single,1,graduate,employed,urban,20020,0,20231,12
+male,single,1,graduate,employed,urban,20020,0,20231,124
+male,single,1,graduate,employed,urban,20020,0,20231,239
+male,single,1,graduate,employed,urban,20020,0,38834,12
+male,single,1,graduate,employed,urban,20020,0,38834,124
+male,single,1,graduate,employed,urban,20020,0,38834,239
+male,single,1,graduate,employed,urban,68697,0,5006,12
+male,single,1,graduate,employed,urban,68697,0,5006,124
+male,single,1,graduate,employed,urban,68697,0,5006,239
+male,single,1,graduate,employed,urban,68697,0,20231,12
+male,single,1,graduate,employed,urban,68697,0,20231,124
+male,single,1,graduate,employed,urban,68697,0,20231,239
+male,single,1,graduate,employed,urban,68697,0,38834,12
+male,single,1,graduate,employed,urban,68697,0,38834,124
+male,single,1,graduate,employed,urban,68697,0,38834,239
+male,single,1,graduate,employed,urban,149961,0,5006,12
+male,single,1,graduate,employed,urban,149961,0,5006,124
+male,single,1,graduate,employed,urban,149961,0,5006,239
+male,single,1,graduate,employed,urban,149961,0,20231,12
+male,single,1,graduate,employed,urban,149961,0,20231,124
+male,single,1,graduate,employed,urban,149961,0,20231,239
+male,single,1,graduate,employed,urban,149961,0,38834,12
+male,single,1,graduate,employed,urban,149961,0,38834,124
+male,single,1,graduate,employed,urban,149961,0,38834,239
+male,single,1,graduate,employed,suburban,20020,0,5006,12
+male,single,1,graduate,employed,suburban,20020,0,5006,124
+male,single,1,graduate,employed,suburban,20020,0,5006,239
+male,single,1,graduate,employed,suburban,20020,0,20231,12
+male,single,1,graduate,employed,suburban,20020,0,20231,124
+male,single,1,graduate,employed,suburban,20020,0,20231,239
+male,single,1,graduate,employed,suburban,20020,0,38834,12
+male,single,1,graduate,employed,suburban,20020,0,38834,124
+male,single,1,graduate,employed,suburban,20020,0,38834,239
+male,single,1,graduate,employed,suburban,68697,0,5006,12
+male,single,1,graduate,employed,suburban,68697,0,5006,124
+male,single,1,graduate,employed,suburban,68697,0,5006,239
+male,single,1,graduate,employed,suburban,68697,0,20231,12
+male,single,1,graduate,employed,suburban,68697,0,20231,124
+male,single,1,graduate,employed,suburban,68697,0,20231,239
+male,single,1,graduate,employed,suburban,68697,0,38834,12
+male,single,1,graduate,employed,suburban,68697,0,38834,124
+male,single,1,graduate,employed,suburban,68697,0,38834,239
+male,single,1,graduate,employed,suburban,149961,0,5006,12
+male,single,1,graduate,employed,suburban,149961,0,5006,124
+male,single,1,graduate,employed,suburban,149961,0,5006,239
+male,single,1,graduate,employed,suburban,149961,0,20231,12
+male,single,1,graduate,employed,suburban,149961,0,20231,124
+male,single,1,graduate,employed,suburban,149961,0,20231,239
+male,single,1,graduate,employed,suburban,149961,0,38834,12
+male,single,1,graduate,employed,suburban,149961,0,38834,124
+male,single,1,graduate,employed,suburban,149961,0,38834,239
+male,single,1,graduate,self employed,urban,20020,0,5006,12
+male,single,1,graduate,self employed,urban,20020,0,5006,124
+male,single,1,graduate,self employed,urban,20020,0,5006,239
+male,single,1,graduate,self employed,urban,20020,0,20231,12
+male,single,1,graduate,self employed,urban,20020,0,20231,124
+male,single,1,graduate,self employed,urban,20020,0,20231,239
+male,single,1,graduate,self employed,urban,20020,0,38834,12
+male,single,1,graduate,self employed,urban,20020,0,38834,124
+male,single,1,graduate,self employed,urban,20020,0,38834,239
+male,single,1,graduate,self employed,urban,68697,0,5006,12
+male,single,1,graduate,self employed,urban,68697,0,5006,124
+male,single,1,graduate,self employed,urban,68697,0,5006,239
+male,single,1,graduate,self employed,urban,68697,0,20231,12
+male,single,1,graduate,self employed,urban,68697,0,20231,124
+male,single,1,graduate,self employed,urban,68697,0,20231,239
+male,single,1,graduate,self employed,urban,68697,0,38834,12
+male,single,1,graduate,self employed,urban,68697,0,38834,124
+male,single,1,graduate,self employed,urban,68697,0,38834,239
+male,single,1,graduate,self employed,urban,149961,0,5006,12
+male,single,1,graduate,self employed,urban,149961,0,5006,124
+male,single,1,graduate,self employed,urban,149961,0,5006,239
+male,single,1,graduate,self employed,urban,149961,0,20231,12
+male,single,1,graduate,self employed,urban,149961,0,20231,124
+male,single,1,graduate,self employed,urban,149961,0,20231,239
+male,single,1,graduate,self employed,urban,149961,0,38834,12
+male,single,1,graduate,self employed,urban,149961,0,38834,124
+male,single,1,graduate,self employed,urban,149961,0,38834,239
+male,single,1,graduate,self employed,suburban,20020,0,5006,12
+male,single,1,graduate,self employed,suburban,20020,0,5006,124
+male,single,1,graduate,self employed,suburban,20020,0,5006,239
+male,single,1,graduate,self employed,suburban,20020,0,20231,12
+male,single,1,graduate,self employed,suburban,20020,0,20231,124
+male,single,1,graduate,self employed,suburban,20020,0,20231,239
+male,single,1,graduate,self employed,suburban,20020,0,38834,12
+male,single,1,graduate,self employed,suburban,20020,0,38834,124
+male,single,1,graduate,self employed,suburban,20020,0,38834,239
+male,single,1,graduate,self employed,suburban,68697,0,5006,12
+male,single,1,graduate,self employed,suburban,68697,0,5006,124
+male,single,1,graduate,self employed,suburban,68697,0,5006,239
+male,single,1,graduate,self employed,suburban,68697,0,20231,12
+male,single,1,graduate,self employed,suburban,68697,0,20231,124
+male,single,1,graduate,self employed,suburban,68697,0,20231,239
+male,single,1,graduate,self employed,suburban,68697,0,38834,12
+male,single,1,graduate,self employed,suburban,68697,0,38834,124
+male,single,1,graduate,self employed,suburban,68697,0,38834,239
+male,single,1,graduate,self employed,suburban,149961,0,5006,12
+male,single,1,graduate,self employed,suburban,149961,0,5006,124
+male,single,1,graduate,self employed,suburban,149961,0,5006,239
+male,single,1,graduate,self employed,suburban,149961,0,20231,12
+male,single,1,graduate,self employed,suburban,149961,0,20231,124
+male,single,1,graduate,self employed,suburban,149961,0,20231,239
+male,single,1,graduate,self employed,suburban,149961,0,38834,12
+male,single,1,graduate,self employed,suburban,149961,0,38834,124
+male,single,1,graduate,self employed,suburban,149961,0,38834,239
+male,single,1,high school,employed,urban,20020,0,5006,12
+male,single,1,high school,employed,urban,20020,0,5006,124
+male,single,1,high school,employed,urban,20020,0,5006,239
+male,single,1,high school,employed,urban,20020,0,20231,12
+male,single,1,high school,employed,urban,20020,0,20231,124
+male,single,1,high school,employed,urban,20020,0,20231,239
+male,single,1,high school,employed,urban,20020,0,38834,12
+male,single,1,high school,employed,urban,20020,0,38834,124
+male,single,1,high school,employed,urban,20020,0,38834,239
+male,single,1,high school,employed,urban,68697,0,5006,12
+male,single,1,high school,employed,urban,68697,0,5006,124
+male,single,1,high school,employed,urban,68697,0,5006,239
+male,single,1,high school,employed,urban,68697,0,20231,12
+male,single,1,high school,employed,urban,68697,0,20231,124
+male,single,1,high school,employed,urban,68697,0,20231,239
+male,single,1,high school,employed,urban,68697,0,38834,12
+male,single,1,high school,employed,urban,68697,0,38834,124
+male,single,1,high school,employed,urban,68697,0,38834,239
+male,single,1,high school,employed,urban,149961,0,5006,12
+male,single,1,high school,employed,urban,149961,0,5006,124
+male,single,1,high school,employed,urban,149961,0,5006,239
+male,single,1,high school,employed,urban,149961,0,20231,12
+male,single,1,high school,employed,urban,149961,0,20231,124
+male,single,1,high school,employed,urban,149961,0,20231,239
+male,single,1,high school,employed,urban,149961,0,38834,12
+male,single,1,high school,employed,urban,149961,0,38834,124
+male,single,1,high school,employed,urban,149961,0,38834,239
+male,single,1,high school,employed,suburban,20020,0,5006,12
+male,single,1,high school,employed,suburban,20020,0,5006,124
+male,single,1,high school,employed,suburban,20020,0,5006,239
+male,single,1,high school,employed,suburban,20020,0,20231,12
+male,single,1,high school,employed,suburban,20020,0,20231,124
+male,single,1,high school,employed,suburban,20020,0,20231,239
+male,single,1,high school,employed,suburban,20020,0,38834,12
+male,single,1,high school,employed,suburban,20020,0,38834,124
+male,single,1,high school,employed,suburban,20020,0,38834,239
+male,single,1,high school,employed,suburban,68697,0,5006,12
+male,single,1,high school,employed,suburban,68697,0,5006,124
+male,single,1,high school,employed,suburban,68697,0,5006,239
+male,single,1,high school,employed,suburban,68697,0,20231,12
+male,single,1,high school,employed,suburban,68697,0,20231,124
+male,single,1,high school,employed,suburban,68697,0,20231,239
+male,single,1,high school,employed,suburban,68697,0,38834,12
+male,single,1,high school,employed,suburban,68697,0,38834,124
+male,single,1,high school,employed,suburban,68697,0,38834,239
+male,single,1,high school,employed,suburban,149961,0,5006,12
+male,single,1,high school,employed,suburban,149961,0,5006,124
+male,single,1,high school,employed,suburban,149961,0,5006,239
+male,single,1,high school,employed,suburban,149961,0,20231,12
+male,single,1,high school,employed,suburban,149961,0,20231,124
+male,single,1,high school,employed,suburban,149961,0,20231,239
+male,single,1,high school,employed,suburban,149961,0,38834,12
+male,single,1,high school,employed,suburban,149961,0,38834,124
+male,single,1,high school,employed,suburban,149961,0,38834,239
+male,single,1,high school,self employed,urban,20020,0,5006,12
+male,single,1,high school,self employed,urban,20020,0,5006,124
+male,single,1,high school,self employed,urban,20020,0,5006,239
+male,single,1,high school,self employed,urban,20020,0,20231,12
+male,single,1,high school,self employed,urban,20020,0,20231,124
+male,single,1,high school,self employed,urban,20020,0,20231,239
+male,single,1,high school,self employed,urban,20020,0,38834,12
+male,single,1,high school,self employed,urban,20020,0,38834,124
+male,single,1,high school,self employed,urban,20020,0,38834,239
+male,single,1,high school,self employed,urban,68697,0,5006,12
+male,single,1,high school,self employed,urban,68697,0,5006,124
+male,single,1,high school,self employed,urban,68697,0,5006,239
+male,single,1,high school,self employed,urban,68697,0,20231,12
+male,single,1,high school,self employed,urban,68697,0,20231,124
+male,single,1,high school,self employed,urban,68697,0,20231,239
+male,single,1,high school,self employed,urban,68697,0,38834,12
+male,single,1,high school,self employed,urban,68697,0,38834,124
+male,single,1,high school,self employed,urban,68697,0,38834,239
+male,single,1,high school,self employed,urban,149961,0,5006,12
+male,single,1,high school,self employed,urban,149961,0,5006,124
+male,single,1,high school,self employed,urban,149961,0,5006,239
+male,single,1,high school,self employed,urban,149961,0,20231,12
+male,single,1,high school,self employed,urban,149961,0,20231,124
+male,single,1,high school,self employed,urban,149961,0,20231,239
+male,single,1,high school,self employed,urban,149961,0,38834,12
+male,single,1,high school,self employed,urban,149961,0,38834,124
+male,single,1,high school,self employed,urban,149961,0,38834,239
+male,single,1,high school,self employed,suburban,20020,0,5006,12
+male,single,1,high school,self employed,suburban,20020,0,5006,124
+male,single,1,high school,self employed,suburban,20020,0,5006,239
+male,single,1,high school,self employed,suburban,20020,0,20231,12
+male,single,1,high school,self employed,suburban,20020,0,20231,124
+male,single,1,high school,self employed,suburban,20020,0,20231,239
+male,single,1,high school,self employed,suburban,20020,0,38834,12
+male,single,1,high school,self employed,suburban,20020,0,38834,124
+male,single,1,high school,self employed,suburban,20020,0,38834,239
+male,single,1,high school,self employed,suburban,68697,0,5006,12
+male,single,1,high school,self employed,suburban,68697,0,5006,124
+male,single,1,high school,self employed,suburban,68697,0,5006,239
+male,single,1,high school,self employed,suburban,68697,0,20231,12
+male,single,1,high school,self employed,suburban,68697,0,20231,124
+male,single,1,high school,self employed,suburban,68697,0,20231,239
+male,single,1,high school,self employed,suburban,68697,0,38834,12
+male,single,1,high school,self employed,suburban,68697,0,38834,124
+male,single,1,high school,self employed,suburban,68697,0,38834,239
+male,single,1,high school,self employed,suburban,149961,0,5006,12
+male,single,1,high school,self employed,suburban,149961,0,5006,124
+male,single,1,high school,self employed,suburban,149961,0,5006,239
+male,single,1,high school,self employed,suburban,149961,0,20231,12
+male,single,1,high school,self employed,suburban,149961,0,20231,124
+male,single,1,high school,self employed,suburban,149961,0,20231,239
+male,single,1,high school,self employed,suburban,149961,0,38834,12
+male,single,1,high school,self employed,suburban,149961,0,38834,124
+male,single,1,high school,self employed,suburban,149961,0,38834,239

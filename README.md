@@ -32,14 +32,15 @@ The system is designed to be executed in the following logical order.
    - Run eda.py to perform EDA and preprocess the data using pp3.py
 2. Model development 
    - Train the models LR1.py and xgb3.py
-3. Boundary testing
-   - Run b1.py
-4. Cross-domain testing
+3. Cross-domain testing
    - Run eval_my.py
-5. Model validation
+4. Model validation
    - Run xgb_my.py
+5. Boundary testing
+   - Run b1.py to generate boundary cases (boundary_cases.csv)
 6. Prediction pipeline
-   - Run predict_raw1.py
+   - Run predict_raw1.py 
+   - Change INPUT_CSV file path to boundary_cases.csv to conduct boundary testing. 
 7. Generate the threshold rules
    - Run threshold.py
 8. Generate financial advice, post-application guidance, and explanations
